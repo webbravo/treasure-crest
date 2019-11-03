@@ -1,0 +1,21 @@
+# The module dir for Node package manager
+/node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# ESLINT FILE
+.eslintrc
+
+# dotenv environment variables file
+.env
+
+# The Sql table
+table.txt
+
+# Test files
+simple-server.js
+/test
