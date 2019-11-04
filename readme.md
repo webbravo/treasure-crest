@@ -1,27 +1,11 @@
 ## What is this?
 
-Just you wait folks!
+Treasure crest website was built for Treasure Crest Integrated School, the website has a mini school mgt system that helps the school manages student and teachers record!
 
-## Sample Data
+## Features
 
-To load sample data, run the following command in your terminal:
-
-```bash
-npm run sample
-```
-
-If you have previously loaded in this data, you can wipe your database 100% clean with:
-
-```bash
-npm run blowitallaway
-```
-
-That will populate 16 stores with 3 authors and 41 reviews. The logins for the authors are as follows:
-
-|Name|Email (login)|Password|
-|---|---|---|
-|Wes Bos|wes@example.com|wes|
-|Debbie Downer|debbie@example.com|debbie|
-|Beau|beau@example.com|beau|
-
-
+    - Payment online
+    - Photo gallery
+    - Result Management syt
+    - Teacher Login
+    - Admin Dashboard
