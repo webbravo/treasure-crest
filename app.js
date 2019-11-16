@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // ROUTE HANDLING
 app.use('/', indexRoute);
-app.use('/teacher', teacherRoute)
+app.use('/teachers', teacherRoute)
 
 
 module.exports = app;

@@ -8,10 +8,15 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/login', (res, req) => {
-    res.send('This is Login route');
+// Show teacher Login form
+router.get('/login', (req, res) => {
+    res.render('teacher/login', {
+        pageTitle: 'Treasure crest | Teacher Area - Login'
+    });
 });
 
-router.get('/login', (res, req) => {
-    res.send('This is Login route');
+router.post('/login', (req, res) => {
+    res.send('Teacher Login details Received here!');
 });
+
+module.exports = router;
