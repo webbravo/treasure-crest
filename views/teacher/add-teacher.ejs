@@ -4,66 +4,62 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><%- pageTitle %></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/normalize.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/main.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/bootstrap.min.css">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/all.min.css">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/fonts/flaticon.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/animate.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/admin-panel-asset/css/style.css">
-    <!-- Modernize js -->
-    <script src="/admin-panel-asset/js/modernizr-3.6.0.min.js"></script>
-</head>
+<% include ../partials/head-tag %>
 
 <body>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
     <!-- Login Page Start Here -->
     <div class="login-page-wrap">
         <div class="login-page-content">
-
             <div class="login-box">
-
                 <div class="item-logo">
                     <img src="/img/logo/logo.jpg" alt="logo">
                 </div>
                 <div class="dismiss-alart">
                     <% include ../partials/message %>
                 </div>
-                <form method="POST" action="/teachers/login" class="login-form">
+
+                <form method="POST" action="/teachers/add" class="login-form">
+                    <div class="form-group">
+                        <label>Firstname</label>
+                        <input name="firstname" type="text" placeholder="Firstname" class="form-control">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <label>Lastname</label>
+                        <input name="lastname" type="text" placeholder="Lastname" class="form-control">
+                        <i class="far fa-user"></i>
+                    </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input name="email" type="email" placeholder="Enter School Email" class="form-control">
+                        <input name="email" type="email" placeholder="Enter Email" class="form-control">
                         <i class="far fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input name="phone" type="phone" placeholder="Enter phone" class="form-control">
+                        <i class="fas fa-phone"></i>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input name="password" type="password" placeholder="Enter password" class="form-control">
                         <i class="fas fa-lock"></i>
                     </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input name="conPassword" type="password" placeholder="Enter password" class="form-control">
+                        <i class="fas fa-lock"></i>
+                    </div>
                     <div class="form-group d-flex align-items-center justify-content-between">
                         <div class="form-check">
-                            <input name="remember-me" type="checkbox" class="form-check-input" id="remember-me">
+                            <input name="remember_me" type="checkbox" class="form-check-input" id="remember-me">
                             <label for="remember-me" class="form-check-label">Remember Me</label>
                         </div>
-                        <a href="/teachers/recover-password" class="forgot-btn">Forgot Password?</a>
                     </div>
-
                     <div class="form-group">
-                        <button type="submit" class="login-btn">Login</button>
+                        <button type="submit" class="login-btn">Register</button>
                     </div>
                 </form>
 

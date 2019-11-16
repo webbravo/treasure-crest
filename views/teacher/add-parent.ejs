@@ -1,0 +1,314 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+    <!-- Preloader Start Here -->
+
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
+                    <div class="header-logo">
+                        <a href="/teachers"><img src="/admin-panel-asset/img/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="sidebar-menu-content">
+                    <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+                        <li class="nav-item">
+                            <a href="/teachers" class="nav-link"><i
+                                    class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-student/" class="nav-link"><i class="fas fa-angle-right"></i>List all
+                                        Students</a>
+                                </li>
+                                <% if (isAdmin == 1) { %>
+                                <li class="nav-item">
+                                    <a href="add-student/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        a Student</a>
+                                </li>
+                                <% }%>
+
+                                <li class="nav-item">
+                                    <a href="add-student-result/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Result</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="student-promotion/" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Students
+                                        Promotion</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-teacher" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Teachers</a>
+                                </li>
+                                <% if (isAdmin == 2) { %>
+                                <li class="nav-item">
+                                    <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Teacher</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="teacher-payment.html" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Payment</a>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Parents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Parent</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <% if (isAdmin == 2) { %>
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
+                                        Collection</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="all-expense.html" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Expenses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Expenses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Classes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Class</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Schedule</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Grades</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-open-book"></i><span>Media</span></a>
+                            <ul class="nav sub-group-menu">
+
+                                <li class="nav-item">
+                                    <a href="media/photos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        photos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/photos/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Photos</a>
+                                </li>
+
+
+                                <hr style=" border-top: 1px solid #fff;">
+                                <li class="nav-item">
+                                    <a href="media/videos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/videos/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Videos</a>
+                                </li>
+
+
+                                <hr style=" border-top: 1px solid #fff;">
+                                <li class="nav-item">
+                                    <a href="media/blog-post/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/blog-post/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Posts</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-calendar"></i><span>Event </span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Event
+                                        Add Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Grades</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>SMS
+                                    Notification</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="account-settings.html" class="nav-link"><i
+                                    class="flaticon-settings"></i><span>Settings</span></a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Parents</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li>Add New Parents</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Add New Parent Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Add New Parents</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+                        <br>
+                        <form method="POST" action="add-parents" class="new-added-form">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" name="firstname" placeholder="Firstname" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" name="lastname" placeholder="Lastname" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>E-Mail</label>
+                                    <input type="email" name="email" placeholder="email" class="form-control" required>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" placeholder="Phone" class="form-control">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Address</label>
+                                    <input type="text" name="address" placeholder="House Address" class="form-control"
+                                        required>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Gender *</label>
+                                    <select name="gender" class="select2">
+                                        <option value="">Please Select Gender *</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Occupation</label>
+                                    <input name="occupation" type="text" placeholder="Current Occupation"
+                                        class="form-control" required>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Religion *</label>
+                                    <select name="religion" class="select2" required>
+                                        <option value="">Please Select Religion *</option>
+                                        <option value="christian">Christian</option>
+                                        <option value="muslim">Muslim</option>
+                                        <option value="buddish">Buddish</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                    <button type="reset"
+                                        class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Add New Parent Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>

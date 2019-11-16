@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+                <div class="mobile-sidebar-header d-md-none">
+                    <div class="header-logo">
+                        <a href="/teachers"><img src="/admin-panel-asset/img/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="sidebar-menu-content">
+                    <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+                        <li class="nav-item">
+                            <a href="/teachers" class="nav-link"><i
+                                    class="flaticon-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-student/" class="nav-link"><i class="fas fa-angle-right"></i>List all
+                                        Students</a>
+                                </li>
+                                <% if (isAdmin == 1) { %>
+                                <li class="nav-item">
+                                    <a href="add-student/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        a Student</a>
+                                </li>
+                                <% }%>
+
+                                <li class="nav-item">
+                                    <a href="add-student-result/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Result</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="student-promotion/" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Students
+                                        Promotion</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-teacher" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Teachers</a>
+                                </li>
+                                <% if (isAdmin == 2) { %>
+                                <li class="nav-item">
+                                    <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Teacher</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="teacher-payment.html" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Payment</a>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Parents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Parent</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <% if (isAdmin == 2) { %>
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
+                                        Collection</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="all-expense.html" class="nav-link"><i
+                                            class="fas fa-angle-right"></i>Expenses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Expenses</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Classes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Class</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Schedule</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Grades</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-open-book"></i><span>Media</span></a>
+                            <ul class="nav sub-group-menu">
+
+                                <li class="nav-item">
+                                    <a href="media/photos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        photos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/photos/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Photos</a>
+                                </li>
+
+
+                                <hr style=" border-top: 1px solid #fff;">
+                                <li class="nav-item">
+                                    <a href="media/videos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/videos/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Videos</a>
+                                </li>
+
+
+                                <hr style=" border-top: 1px solid #fff;">
+                                <li class="nav-item">
+                                    <a href="media/blog-post/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                                        Post</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="media/blog-post/" class="nav-link"><i class="fas fa-list"></i>List
+                                        Posts</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i class="flaticon-calendar"></i><span>Event </span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                        Event
+                                        Add Event</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                                        Grades</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>SMS
+                                    Notification</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="account-settings.html" class="nav-link"><i
+                                    class="flaticon-settings"></i><span>Settings</span></a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Admin Dashboard</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li>Admin</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Dashboard summery Start Here -->
+                <div class="row gutters-20">
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-green ">
+                                        <i class="flaticon-classmates text-green"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Students</div>
+                                        <div class="item-number"><span class="counter" data-num="150000">150000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-blue">
+                                        <i class="flaticon-multiple-users-silhouette text-blue"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Teachers</div>
+                                        <div class="item-number"><span class="counter" data-num="2250">2250</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-yellow">
+                                        <i class="flaticon-couple text-orange"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Parents</div>
+                                        <div class="item-number"><span class="counter" data-num="5690">5690</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12">
+                        <div class="dashboard-summery-one mg-b-20">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <div class="item-icon bg-light-red">
+                                        <i class="flaticon-money text-red"></i>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="item-content">
+                                        <div class="item-title">Earnings</div>
+                                        <div class="item-number"><span>$</span><span class="counter"
+                                                data-num="193000">193000</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dashboard summery End Here -->
+                <!-- Dashboard Content Start Here -->
+
+                <!-- Dashboard Content End Here -->
+                <!-- Social Media Start Here -->
+                <div class="row gutters-20">
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card dashboard-card-seven">
+                            <div class="social-media bg-fb hover-fb">
+                                <div class="media media-none--lg">
+                                    <div class="social-icon">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </div>
+                                    <div class="media-body space-sm">
+                                        <h6 class="item-title">Like us on facebook</h6>
+                                    </div>
+                                </div>
+                                <div class="social-like">30,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card dashboard-card-seven">
+                            <div class="social-media bg-twitter hover-twitter">
+                                <div class="media media-none--lg">
+                                    <div class="social-icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="media-body space-sm">
+                                        <h6 class="item-title">Follow us on twitter</h6>
+                                    </div>
+                                </div>
+                                <div class="social-like">1,11,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card dashboard-card-seven">
+                            <div class="social-media bg-gplus hover-gplus">
+                                <div class="media media-none--lg">
+                                    <div class="social-icon">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </div>
+                                    <div class="media-body space-sm">
+                                        <h6 class="item-title">Follow us on googleplus</h6>
+                                    </div>
+                                </div>
+                                <div class="social-like">19,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="card dashboard-card-seven">
+                            <div class="social-media bg-linkedin hover-linked">
+                                <div class="media media-none--lg">
+                                    <div class="social-icon">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+                                    <div class="media-body space-sm">
+                                        <h6 class="item-title">Follow us on linked</h6>
+                                    </div>
+                                </div>
+                                <div class="social-like">45,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Media End Here -->
+                <!-- Footer Area Start Here -->
+                <% include ../partials/footer-tag %>
+                <!-- Footer Area End Here -->
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>
