@@ -67,6 +67,11 @@ router.get('/all-students', auth.isTeacher, (req, res) => {
 });
 
 
+router.get("/add-student", auth.isTeacher);
+router.post("/add-student", auth.isTeacher);
+
+
+
 
 /**==================ALL PARENT RELATED ROUTES====================**/
 
