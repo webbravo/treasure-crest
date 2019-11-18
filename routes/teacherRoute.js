@@ -1,6 +1,7 @@
 const express = require('express');
 const teacherController = require('../controllers/teachersController');
 const parentsController = require('../controllers/parentsController');
+const classroomController = require('../controllers/classController');
 const auth = require('../middlewares/authMiddleware');
 const validator = require('../middlewares/validations');
 
@@ -57,13 +58,19 @@ router.get("/recover-password", (req, res) => {
 
 /**==================ALL THE STUDENT RELATED ROUTES====================**/
 
-router.get('/all-student', auth.isTeacher, (req, res) => {
+router.get('/all-students', auth.isTeacher, (req, res) => {
     res.json({
         Student: 'Adegalo Son',
         class: 'Primary 1',
         age: 4
     })
 });
+
+
+router.get("/add-student", auth.isTeacher);
+router.post("/add-student", auth.isTeacher);
+
+
 
 
 /**==================ALL PARENT RELATED ROUTES====================**/
@@ -78,9 +85,17 @@ router.get('/all-parents', auth.isTeacher, (req, res, next) => {
 
 // Add Parents
 router.get('/add-parents', auth.isTeacher, parentsController.showAddForm);
-
-//TODO: ValidateInput, SaveRecord
 router.post('/add-parents', auth.isTeacher, validator.addParentValidation, parentsController.add);
+
+
+/**==================ALL CLASS RELATED ROUTES====================**/
+
+//  Display the lsit of classroom
+router.get('/all-class', auth.isTeacher, classroomController.listAll);
+
+// Add A Classroom
+router.get('/add-class', auth.isTeacher, classroomController.showAddForm);
+router.post('/add-class', auth.isTeacher, validator.addClassroomValidation, classroomController.save);
 
 
 

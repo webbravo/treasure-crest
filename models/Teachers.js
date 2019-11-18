@@ -20,4 +20,11 @@ module.exports.findByEmail = async function (email) {
 }
 
 
-module.exports.findById = function (id) {}
+module.exports.findById = function (id) {
+    //  Get a teacher by ID
+}
+
+module.exports.getTeachersID = async function () {
+    const rows = await mysqlConnection.query('SELECT id, firstname, lastname FROM Teachers');
+    return rows;
+}

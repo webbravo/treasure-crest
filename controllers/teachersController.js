@@ -1,4 +1,4 @@
-const Teacher = require('../models/Teachers');
+const Teachers = require('../models/Teachers');
 const h = require('../util/helper');
 const bcrypt = require("bcryptjs");
 const {
@@ -14,7 +14,7 @@ module.exports.login = (req, res) => {
     } = req.body;
 
     // Search for teacher by email
-    Teacher.findByEmail(email).then(foundTeacher => {
+    Teachers.findByEmail(email).then(foundTeacher => {
 
         // Check if any Teacher was found
         if (foundTeacher.length === 0) {
@@ -105,4 +105,15 @@ module.exports.showDashboard = (req, res) => {
         pageTitle: 'Teacher Dashboard | Treasure Crest Integrated School',
         fullname: `${req.session.teacherName.firstname} ${req.session.teacherName.lastname}`
     });
+};
+
+
+module.exports.getTeacherById = (req, res) => {
+    // Write Method get a teacher by ID
+};
+
+// This method returns all the Teacher ID, Firstname, lastname
+module.exports.getTeachersID = async (req, res) => {
+    const foundTeachers = await Teachers.getTeachersID();
+    return foundTeachers;
 };

@@ -1,0 +1,183 @@
+<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+    <div class="mobile-sidebar-header d-md-none">
+        <div class="header-logo">
+            <a href="/teachers"><img src="/admin-panel-asset/img/logo.png" alt="logo"></a>
+        </div>
+    </div>
+    <div class="sidebar-menu-content">
+        <ul class="nav nav-sidebar-menu sidebar-toggle-view">
+            <li class="nav-item">
+                <a href="/teachers" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="/teachers/all-student/" class="nav-link"><i class="fas fa-angle-right"></i>List all
+                            Students</a>
+                    </li>
+                    <% if (isAdmin == 1) { %>
+                    <li class="nav-item">
+                        <a href="add-student/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            a Student</a>
+                    </li>
+                    <% }%>
+
+                    <li class="nav-item">
+                        <a href="/teachers/add-student-result/" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Result</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/teachers/student-promotion/" class="nav-link"><i
+                                class="fas fa-angle-right"></i>Students
+                            Promotion</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="all-teacher" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Teachers</a>
+                    </li>
+                    <% if (isAdmin == 2) { %>
+                    <li class="nav-item">
+                        <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Teacher</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teacher-payment.html" class="nav-link"><i class="fas fa-angle-right"></i>Payment</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="/teachers/all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Parents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/teachers/add-parents" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Parent</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i
+                        class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="/teachers/all-class" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/teachers/add-class" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                            Class</a>
+                    </li>
+                </ul>
+            </li>
+            <% if (isAdmin == 2) { %>
+
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-technological"></i><span>Acconunt</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="all-fees.html" class="nav-link"><i class="fas fa-angle-right"></i>All Fees
+                            Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="all-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="add-expense.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Expenses</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-shopping-list"></i><span>Exam</span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                            Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                            Grades</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-open-book"></i><span>Media</span></a>
+                <ul class="nav sub-group-menu">
+
+                    <li class="nav-item">
+                        <a href="media/photos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                            photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media/photos/" class="nav-link"><i class="fas fa-list"></i>List
+                            Photos</a>
+                    </li>
+
+
+                    <hr style=" border-top: 1px solid #fff;">
+                    <li class="nav-item">
+                        <a href="media/videos/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                            Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media/videos/" class="nav-link"><i class="fas fa-list"></i>List
+                            Videos</a>
+                    </li>
+
+
+                    <hr style=" border-top: 1px solid #fff;">
+                    <li class="nav-item">
+                        <a href="media/blog-post/add" class="nav-link"><i class="fas fa-plus"></i>Add
+                            Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media/blog-post/" class="nav-link"><i class="fas fa-list"></i>List
+                            Posts</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link"><i class="flaticon-calendar"></i><span>Event </span></a>
+                <ul class="nav sub-group-menu">
+                    <li class="nav-item">
+                        <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            Event
+                            Add Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
+                            Grades</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>SMS
+                        Notification</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a href="account-settings.html" class="nav-link"><i
+                        class="flaticon-settings"></i><span>Settings</span></a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

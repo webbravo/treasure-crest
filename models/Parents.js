@@ -4,7 +4,6 @@ module.exports.save = function (obj) {
     // Execute to Save teacher to the DB
     mysqlConnection.query('INSERT INTO Parents SET ?', obj);
     return true;
-
 };
 
 
