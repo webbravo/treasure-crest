@@ -124,6 +124,29 @@ module.exports = {
         }).withMessage("Religion name too short!")
     ],
 
+    addClassroomValidation: [
+        body('name')
+        .trim()
+        .isLength({
+            min: 3
+        })
+        .withMessage("Class name too short! "),
+
+        body("year")
+        .trim()
+        .isLength({
+            min: 4
+        })
+        .withMessage("Enter a valid email address")
+        .isNumeric().withMessage("Use only numbers!"),
+
+        body("description")
+        .trim()
+        .isLength({
+            min: 15
+        }).withMessage("Description too short!")
+    ],
+
     addArticleValidation: [
         body('title').trim().isLength({
             min: 5

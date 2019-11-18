@@ -6,14 +6,12 @@ const Parent = require('../models/Parents');
 
 module.exports.listAll = (req, res) => {
     // Fetch Parent List
-    const getAll = Parent.getAll(req.pagination.limit).then(foundParents => {
-        console.log(foundParents);
+    Parent.getAll(req.pagination.limit).then(foundParents => {
         // Display Record
         res.render("teacher/all-parent", {
             pageTitle: "All Parents List | Treasure Crest Integrated School",
             parents: foundParents
         });
-        // res.json(foundParents);
     });
 }
 
@@ -59,7 +57,7 @@ module.exports.add = (req, res) => {
 
         // TODO: Check for Duplicate entries
 
-        // Pass teacher Object to DB
+        // Pass Parent Object to DB
         const addParent = Parent.save(req.body);
 
         if (addParent === true) {
@@ -68,5 +66,4 @@ module.exports.add = (req, res) => {
         }
 
     }
-    // res.json(req.body);
 };

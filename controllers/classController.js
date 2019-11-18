@@ -1,0 +1,38 @@
+const Classroom = require('../models/Classroom');
+const Teachers = require('../models/Teachers');
+const teachersController = require('../controllers/teachersController');
+
+// Show the add classroom form
+module.exports.showAddForm = (req, res) => {
+    // Get all teacher (Id, firstname, lastname);
+    teachersController.getTeachersID().then(teachers => {
+        // Render the teacher list to the add clssrom form
+        res.render("teacher/add-class", {
+            pageTitle: "Add a Classroom | Treasure Crest Integrated School",
+            teachers: teachers
+        });
+    });
+};
+
+
+module.exports.listAll = (req, res) => {
+    // Fetch Classroom List
+    Classroom.getAll().then(foundClassrooms => {
+        // Display Record
+        res.render("teacher/all-class", {
+            pageTitle: "All Classroom List | Treasure Crest Integrated School",
+            classrooms: foundClassrooms
+        });
+    });
+}
+
+
+module.exports.save = (req, res) => {
+    // Pass classroom Object to DB
+    const addClassrom = Classroom.save(req.body);
+    if (addClassrom === true) {
+        req.flash('success', "New Class added!");
+        return res.redirect('../teachers/add-class');
+    }
+
+};
