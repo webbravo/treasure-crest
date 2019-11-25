@@ -73,6 +73,7 @@ app.use(function (req, res, next) {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     res.locals.warning = req.flash('warning');
+
     next();
 });
 
@@ -80,9 +81,11 @@ app.use(function (req, res, next) {
 app.use((req, res, next) => {
     res.locals.isAdmin = req.session.isAdmin;
     res.locals.teacherID = req.session.teacherID;
-    res.locals.teacherName = req.session.teacherName
+    res.locals.teacherName = req.session.teacherName;
+    // res.locals.body = "qw";
     next();
 });
+
 
 
 
