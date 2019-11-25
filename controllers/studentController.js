@@ -99,16 +99,8 @@ module.exports.add = async (req, res) => {
                 })
             });
         } else {
-
-            // Delete confirm password from the body Object
-            delete req.body.conPassword;
-
-            // Hash Password
-            req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-
             // Pass Student Object to DB
-            const addStudent = Student.save(req.body);
-            if (addStudent === true) {
+            if (Student.save(req.body) === true) {
                 req.flash('success', "New Student added!");
                 return res.redirect('../teachers/add-students');
             }

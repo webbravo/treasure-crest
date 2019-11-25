@@ -2,6 +2,7 @@ const mysqlConnection = require('./connection');
 
 module.exports.save = function (obj) {
     // Execute and Save Students to the DB
+    console.log(obj)
     try {
         mysqlConnection.query('INSERT INTO Students SET ?', obj);
         return true;

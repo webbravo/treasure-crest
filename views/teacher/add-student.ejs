@@ -115,9 +115,9 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Phone *</label>
+                                    <label>Phone </label>
                                     <input type="text" name="phone" placeholder=" Parent Phone number"
-                                        class="form-control" required
+                                        class="form-control"
                                         value="<%= (typeof formData !== 'undefined'  && formData.phone ) ? formData.phone : ''  %>">
                                 </div>
 
@@ -491,9 +491,9 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-9 col-12 form-group">
-                                    <label>Student Class</label>
+                                    <label>Student classroom *</label>
                                     <select name="class_id" class="select2" required>
-                                        <option value="">Please a Classroom *</option>
+                                        <option value="">Please choose </option>
                                         <% classrooms.forEach(function (classroom, index, arr){ %>
                                         <option value="<%= classroom.id %>"
                                             <%= (typeof formData !== 'undefined'  && formData.class_id === formData.class_id ) ? selected="selected" : ''  %>>
@@ -551,7 +551,7 @@
                                 <div class="col-xl-3 col-lg-9 col-12 form-group">
                                     <label>Parent 1 (Mom) *</label>
                                     <select name="parent_1" class="select2" required>
-                                        <option value="">Please a Parent *</option>
+                                        <option value="">Choose a Parent </option>
                                         <% parents.forEach(function (parent, index, arr){ %>
                                         <option value="<%= parent.id %>">
                                             <%= parent.name %>
@@ -563,7 +563,7 @@
                                 <div class="col-xl-3 col-lg-9 col-12 form-group">
                                     <label>Parent 2 (Dad)</label>
                                     <select name="parent_2" class="select2">
-                                        <option value="">Please a Parent *</option>
+                                        <option value="">Choose a Parent *</option>
                                         <% parents.forEach(function (parent, index, arr){ %>
                                         <option value="<%= parent.id %>">
                                             <%= parent.name %>
