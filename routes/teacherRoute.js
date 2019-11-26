@@ -69,7 +69,13 @@ router.get('/all-students', auth.isTeacher, (req, res) => {
 
 
 router.get("/add-students", auth.isTeacher, studentController.showAddForm);
-router.post('/add-students', auth.isTeacher, validator.addStudentValidation, studentController.add);
+router.post('/add-students',
+    auth.isTeacher,
+    studentController.upload,
+    studentController.resize,
+    validator.addStudentValidation,
+    studentController.add
+);
 
 
 

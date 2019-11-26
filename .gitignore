@@ -26,3 +26,6 @@ package2.json
 #Access Log
 access.log
 
+# The Photos plan
+public/uploads/students/*
+

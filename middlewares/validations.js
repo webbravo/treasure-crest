@@ -5,7 +5,7 @@
  */
 
 const {
-    body,
+    check,
     validationResult,
     sanitizeBody,
 } = require("express-validator");
@@ -13,34 +13,34 @@ const {
 
 module.exports = {
     addTeacherValidation: [
-        body('firstname')
+        check('firstname')
         .trim()
         .isLength({
             min: 3
         })
         .withMessage("First name too short! "),
 
-        body('lastname')
+        check('lastname')
         .trim()
         .isLength({
             min: 3
         })
         .withMessage("Last name too short! "),
 
-        body("phone")
+        check("phone")
         .trim()
         .isLength({
             min: 11
         }).withMessage("phone must be leat 11 chars")
         .isNumeric().withMessage("No special chars allowed"),
 
-        body("email")
+        check("email")
         .isEmail({
             domain_specific_validation: true
         })
         .withMessage("Enter a valid email address"),
 
-        body("password")
+        check("password")
         .isLength({
             min: 6
         }).withMessage("Password too short")
@@ -58,7 +58,7 @@ module.exports = {
     ],
 
     loginTeacherValidation: [
-        body("email")
+        check("email")
         .isEmail({
             domain_specific_validation: true
         })
@@ -67,35 +67,35 @@ module.exports = {
 
 
     addParentValidation: [
-        body('firstname')
+        check('firstname')
         .trim()
         .isLength({
             min: 3
         })
         .withMessage("First name too short! "),
 
-        body('lastname')
+        check('lastname')
         .trim()
         .isLength({
             min: 3
         })
         .withMessage("Last name too short! "),
 
-        body("gender")
+        check("gender")
         .trim()
         .isLength({
             min: 4
         }).withMessage("Enter valid gender"),
 
 
-        body("phone")
+        check("phone")
         .trim()
         .isLength({
             min: 11
         }).withMessage("phone must be leat 11 chars")
         .isNumeric().withMessage("No special chars allowed"),
 
-        body("address")
+        check("address")
         .trim()
         .isLength({
             min: 10
@@ -103,20 +103,20 @@ module.exports = {
 
 
 
-        body("occupation")
+        check("occupation")
         .trim()
         .isLength({
             min: 4
         }).withMessage("Occupation name too short!"),
 
-        body("religion")
+        check("religion")
         .trim()
         .isLength({
             min: 4
         }).withMessage("Religion name too short!"),
 
 
-        body("email")
+        check("email")
         .trim()
         .isLength({
             min: 3
@@ -127,7 +127,7 @@ module.exports = {
         .withMessage("Enter a valid email address"),
 
 
-        body("password")
+        check("password")
         .isLength({
             min: 6
         }).withMessage("Password too short")
@@ -145,14 +145,14 @@ module.exports = {
     ],
 
     addClassroomValidation: [
-        body('name')
+        check('name')
         .trim()
         .isLength({
             min: 3
         })
         .withMessage("Class name too short! "),
 
-        body("year")
+        check("year")
         .trim()
         .isLength({
             min: 4
@@ -160,7 +160,7 @@ module.exports = {
         .withMessage("Enter a valid email address")
         .isNumeric().withMessage("Use only numbers!"),
 
-        body("description")
+        check("description")
         .trim()
         .isLength({
             min: 15
@@ -168,22 +168,14 @@ module.exports = {
     ],
 
     addStudentValidation: [
-        body('firstname')
+        check('firstname')
         .trim()
         .isLength({
             min: 2
         })
         .withMessage("First name too short! "),
 
-
-        body('middlename')
-        .trim()
-        .isLength({
-            min: 3
-        })
-        .withMessage("Middle name too short! "),
-
-        body('lastname')
+        check('lastname')
         .trim()
         .isLength({
             min: 3
@@ -191,21 +183,21 @@ module.exports = {
         .withMessage("Last name too short! "),
 
 
-        body("gender")
+        check("gender")
         .trim()
         .isLength({
             min: 4,
             max: 6
         }).withMessage("Enter Valid gender"),
 
-        body("dob")
+        check("dob")
         .trim()
         .isLength({
             min: 10,
             max: 10
         }).withMessage("Date of Birth Invalid"),
 
-        body("address")
+        check("address")
         .trim()
         .isLength({
             min: 10
@@ -214,17 +206,7 @@ module.exports = {
             max: 255
         }).withMessage("Address too long!"),
 
-        body("phone")
-        .trim()
-        .isLength({
-            min: 10
-        }).withMessage("phone must be least 11 chars")
-        .isLength({
-            max: 13
-        }).withMessage("Phone number is 14 figures")
-        .isNumeric().withMessage("No special chars allowed"),
-
-        body("nationality")
+        check("nationality")
         .trim()
         .isLength({
             min: 4
@@ -233,7 +215,7 @@ module.exports = {
             max: 20
         }).withMessage("Country name too long"),
 
-        body("state_origin")
+        check("state_origin")
         .trim()
         .isLength({
             min: 3
@@ -242,7 +224,7 @@ module.exports = {
             max: 20
         }).withMessage("State name too long"),
 
-        body("lga_origin")
+        check("lga_origin")
         .trim()
         .isLength({
             min: 3
@@ -251,7 +233,7 @@ module.exports = {
             max: 20
         }).withMessage("LGA name too long"),
 
-        body("hometown")
+        check("hometown")
         .trim()
         .isLength({
             min: 3
@@ -262,7 +244,7 @@ module.exports = {
 
 
 
-        body("religion")
+        check("religion")
         .trim()
         .isLength({
             min: 4
@@ -273,14 +255,14 @@ module.exports = {
 
 
 
-        body("student_id")
+        check("student_id")
         .trim()
         .isLength({
             min: 4
         }).withMessage("Student ID too short!"),
 
 
-        body("previous_school")
+        check("previous_school")
         .trim()
         .isLength({
             min: 4
@@ -290,7 +272,7 @@ module.exports = {
         }).withMessage("Previous School name too Long!"),
 
 
-        body("reason_for_leaving")
+        check("reason_for_leaving")
         .trim()
         .isLength({
             min: 4
@@ -299,7 +281,7 @@ module.exports = {
             max: 250
         }).withMessage("Reason too Long (250 Word Max)!"),
 
-        body("reason_for_leaving")
+        check("reason_for_leaving")
         .trim()
         .isLength({
             min: 4
@@ -309,7 +291,7 @@ module.exports = {
         }).withMessage("Reason too Long (250 Word Max)!"),
 
 
-        body("class_id")
+        check("class_id")
         .trim()
         .isLength({
             min: 1
@@ -321,7 +303,7 @@ module.exports = {
 
 
 
-        body("term")
+        check("term")
         .trim()
         .isLength({
             min: 4
@@ -331,7 +313,7 @@ module.exports = {
         }).withMessage("Reason too Long (12 Word Max)!"),
 
 
-        body("academic_session")
+        check("academic_session")
         .trim()
         .isLength({
             min: 4
@@ -341,7 +323,7 @@ module.exports = {
         }).withMessage(" Enter a Valid Year(10 Word Max)!"),
 
 
-        body("parent_1")
+        check("parent_1")
         .trim()
         .isLength({
             min: 1
@@ -355,10 +337,10 @@ module.exports = {
     ],
 
     addArticleValidation: [
-        body('title').trim().isLength({
+        check('title').trim().isLength({
             min: 5
         }).withMessage('Title Must be at least 5 chars long'),
-        body("body").trim().isLength({
+        check("body").trim().isLength({
             min: 10
         }).withMessage('Body Must be at least 10 chars long')
 
