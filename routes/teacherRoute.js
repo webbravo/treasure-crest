@@ -59,15 +59,10 @@ router.get("/recover-password", (req, res) => {
 
 /**==================ALL THE STUDENT RELATED ROUTES====================**/
 
-router.get('/all-students', auth.isTeacher, (req, res) => {
-    res.json({
-        Student: 'Adegalo Son',
-        class: 'Primary 1',
-        age: 4
-    })
-});
+// Show all Students
+router.get('/all-students', auth.isTeacher, studentController.listAll);
 
-
+// Show add student form
 router.get("/add-students", auth.isTeacher, studentController.showAddForm);
 router.post('/add-students',
     auth.isTeacher,

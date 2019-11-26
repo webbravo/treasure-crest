@@ -11,6 +11,50 @@ const {
     validationResult,
 } = require('express-validator');
 
+
+const multerOptions = {
+    storage: multer.memoryStorage(),
+    fileFilter: function (req, file, next) {
+        const isPhoto = file.mimetype.startsWith("image/");
+        if (isPhoto) {
+            next(null, true);
+        } else {
+            next({
+                    message: "That filetype isn't allowed"
+                },
+                false
+            );
+        }
+    }
+};
+
+module.exports.upload = multer(multerOptions).single("photo");
+
+module.exports.resize = async (req, res, next) => {
+
+    // Check if there is no new file to resize
+    if (!req.file) {
+        console.log("No file  Selected")
+        next();
+        return;
+    }
+
+    const extension = req.file.mimetype.split("/")[1];
+    req.body.photo = `${uuid()}.${extension}`;
+
+    // Now we Resize
+    const photo = await jimp.read(req.file.buffer);
+    await photo.resize(800, jimp.AUTO);
+    await photo.write(
+        `./public/uploads/students/${req.body.photo}`
+    );
+
+    // Once uploaded file to file system keep going;
+    req.body.photo = `/uploads/students/${req.body.photo}`;
+    next();
+
+};
+
 // Show the add Student form
 module.exports.showAddForm = async (req, res) => {
     // Get All Classroom
@@ -93,7 +137,7 @@ module.exports.add = async (req, res) => {
 
             // Pass Student Object to DB
             if (Student.save(req.body) === true) {
-                req.flash('success', "New Student added!");
+                req.flash('success', `New Student added!  Check <a href='/all-students'>Student list</a> here`);
                 return res.redirect('../teachers/add-students');
             }
         }
@@ -101,46 +145,12 @@ module.exports.add = async (req, res) => {
     }
 };
 
-
-const multerOptions = {
-    storage: multer.memoryStorage(),
-    fileFilter: function (req, file, next) {
-        const isPhoto = file.mimetype.startsWith("image/");
-        if (isPhoto) {
-            next(null, true);
-        } else {
-            next({
-                    message: "That filetype isn't allowed"
-                },
-                false
-            );
-        }
-    }
-};
-
-module.exports.upload = multer(multerOptions).single("photo");
-
-module.exports.resize = async (req, res, next) => {
-
-    // Check if there is no new file to resize
-    if (!req.file) {
-        console.log("No file  Selected")
-        next();
-        return;
-    }
-
-    const extension = req.file.mimetype.split("/")[1];
-    req.body.photo = `${uuid()}.${extension}`;
-
-    // Now we Resize
-    const photo = await jimp.read(req.file.buffer);
-    await photo.resize(800, jimp.AUTO);
-    await photo.write(
-        `./public/uploads/students/${req.body.photo}`
-    );
-
-    // Once uploaded file to file system keep going;
-    req.body.photo = `./uploads/students/${req.body.photo}`;
-    next();
-
-};
+module.exports.listAll = async (req, res) => {
+    // Fetch Parent List
+    Student.getAll().then(foundStudents => {
+        res.render("teacher/all-student", {
+            pageTitle: "All Student List | Treasure Crest Integrated School",
+            students: foundStudents
+        });
+    });
+}

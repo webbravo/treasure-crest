@@ -23,5 +23,30 @@ module.exports.isDuplicate = async (obj) => {
         // handle the error
         console.error(error);
     }
+}
 
+
+module.exports.getAll = async function () {
+    try {
+        const sql = `SELECT
+                    Students.id AS id,
+                    Students.photo AS photo,
+                    CONCAT(Students.firstname, ' ', Students.middlename, ' ', Students.lastname) AS fullname,
+                    Students.student_id AS student_id,
+                    Students.gender AS gender,
+                    Class.id AS class_id,
+                    Class.name AS classname,
+                    CONCAT(Parents.firstname, ' ', Parents.lastname) as parentName,
+                    Parents.phone AS parentPhone
+                    FROM
+                    Students
+                    INNER JOIN Class ON Students.class_id = Class.id
+                    INNER JOIN Parents ON Students.parent_1 = Parents.id
+                    ORDER BY ID DESC`;
+
+        const rows = await mysqlConnection.query(sql);
+        return rows;
+    } catch (error) {
+        console.error(error);
+    }
 }
