@@ -38,8 +38,18 @@ app.use(morgan('combined', {
 }))
 
 // SET View Engine
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+// Set Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Takes the raw requests and turns them into usable properties on req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 
 app.use(cookieParser(SESSION_SECRET));
@@ -60,11 +70,7 @@ app.use(session({
 
 }));
 
-// Takes the raw requests and turns them into usable properties on req.body
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+
 
 // Express Messages Middleware
 app.use(flash());
@@ -73,6 +79,7 @@ app.use(function (req, res, next) {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     res.locals.warning = req.flash('warning');
+
     next();
 });
 
@@ -80,14 +87,10 @@ app.use(function (req, res, next) {
 app.use((req, res, next) => {
     res.locals.isAdmin = req.session.isAdmin;
     res.locals.teacherID = req.session.teacherID;
-    res.locals.teacherName = req.session.teacherName
+    res.locals.teacherName = req.session.teacherName;
     next();
 });
 
-
-
-// Set Static files
-app.use(express.static(path.join(__dirname, './public')));
 
 // Route Handling App level Middleware
 app.use('/', indexRoute);

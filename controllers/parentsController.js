@@ -1,19 +1,29 @@
 const {
     validationResult,
 } = require('express-validator');
-const Parent = require('../models/Parents');
+const Parents = require('../models/Parents');
+const bcrypt = require("bcryptjs");
+
 
 
 module.exports.listAll = (req, res) => {
     // Fetch Parent List
-    Parent.getAll(req.pagination.limit).then(foundParents => {
-        // Display Record
+    Parents.getAll(req.pagination.limit).then(foundParents => {
         res.render("teacher/all-parent", {
             pageTitle: "All Parents List | Treasure Crest Integrated School",
             parents: foundParents
         });
     });
-}
+};
+
+
+// Get All Parents Id and name
+module.exports.getAllParentsID = async (req, res) => {
+    const parentsID = await Parents.getAllParentsID();
+    return parentsID;
+};
+
+
 
 
 // Show the add parent form
@@ -25,45 +35,51 @@ module.exports.showAddForm = (req, res) => {
 };
 
 // Add a Parent
-module.exports.add = (req, res) => {
+module.exports.add = async (req, res) => {
 
     // TODO: fix validation and redirect with a message
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors);
-        // TODO: DO A PROPER ERROR HANDLING & GIVE
-        // errors: [{
-        //         value: 'qw',
-        //         msg: 'First name too short! ',
-        //         param: 'firstname',
-        //         location: 'body'
-        //     },
-        //     {
-        //         value: 'qw',
-        //         msg: 'Last name too short! ',
-        //         param: 'lastname',
-        //         location: 'body'
-        //     },
-        //     {
-        //         value: 'qw',
-        //         msg: 'Occupation name too short!',
-        //         param: 'occupation',
-        //         location: 'body'
-        //     }
-        // ]
-        req.flash('error', errors[0].msg)
-        return res.redirect('../teachers/add-parents');
+        console.log(errors.errors);
+
+        // Render the add a parent form
+        res.render("teacher/add-parent", {
+            pageTitle: "Add a Parent | Treasure Crest Integrated School",
+            formData: req.body,
+            error: errors.errors
+        });
     } else {
 
-        // TODO: Check for Duplicate entries
+        //Check for Duplicate entries
+        const isDuplicate = await Parents.isDuplicate([
+            req.body.phone,
+            req.body.email
+        ]);
 
-        // Pass Parent Object to DB
-        const addParent = Parent.save(req.body);
+        if (isDuplicate === true) {
+            // Re-Render the add a parent form
+            res.render("teacher/add-parent", {
+                pageTitle: "Add a Parent | Treasure Crest Integrated School",
+                formData: req.body,
+                duplicateError: "Parent Record Already Exist, Check  <a href='/teachers/all-parents'>Student list</a> here"
+            });
+        } else {
+            // Delete confirm password from the body Object
+            delete req.body.conPassword;
 
-        if (addParent === true) {
-            req.flash('success', "New Parent added!");
-            return res.redirect('../teachers/add-parents');
+            // Hash Password
+            req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+
+            // Pass Parent Object to DB
+            const addParent = Parents.save(req.body);
+            if (addParent === true) {
+                req.flash('success', "New Parent added!");
+                return res.redirect('../teachers/add-parents');
+            }
         }
+
+
+
 
     }
 };

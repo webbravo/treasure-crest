@@ -13,6 +13,8 @@ module.exports.login = (req, res) => {
         password,
     } = req.body;
 
+
+
     // Search for teacher by email
     Teachers.findByEmail(email).then(foundTeacher => {
 

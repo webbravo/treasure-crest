@@ -1,6 +1,7 @@
 const express = require('express');
 const teacherController = require('../controllers/teachersController');
 const parentsController = require('../controllers/parentsController');
+const studentController = require('../controllers/studentController');
 const classroomController = require('../controllers/classController');
 const auth = require('../middlewares/authMiddleware');
 const validator = require('../middlewares/validations');
@@ -58,17 +59,18 @@ router.get("/recover-password", (req, res) => {
 
 /**==================ALL THE STUDENT RELATED ROUTES====================**/
 
-router.get('/all-students', auth.isTeacher, (req, res) => {
-    res.json({
-        Student: 'Adegalo Son',
-        class: 'Primary 1',
-        age: 4
-    })
-});
+// Show all Students
+router.get('/all-students', auth.isTeacher, studentController.listAll);
 
-
-router.get("/add-student", auth.isTeacher);
-router.post("/add-student", auth.isTeacher);
+// Show add student form
+router.get("/add-students", auth.isTeacher, studentController.showAddForm);
+router.post('/add-students',
+    auth.isTeacher,
+    studentController.upload,
+    studentController.resize,
+    validator.addStudentValidation,
+    studentController.add
+);
 
 
 

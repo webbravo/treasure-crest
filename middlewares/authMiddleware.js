@@ -3,9 +3,9 @@ const SESSION_SECRET = process.env.SESSION_NAME;
 // Teacher
 module.exports.isTeacher = (req, res, next) => {
     if (!req.session.teacherID) {
-        req.session.returnTo = req.originalUrl;
-        req.flash('warning', 'Please login');
-        return res.redirect('../teachers/login');
+        req.session.returnTo = req.originalUrl || '/';
+        req.flash('warning', "Please Login");
+        return res.redirect('/teachers/login');
     }
     next();
 };

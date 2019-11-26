@@ -21,12 +21,12 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Parents</h3>
+                    <h3>Students</h3>
                     <ul>
                         <li>
                             <a href="/teachers">Home</a>
                         </li>
-                        <li>All Parents</li>
+                        <li>All Students</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>All Parents Data</h3>
+                                <h3>All Students Data</h3>
                             </div>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -78,32 +78,31 @@
                                             </div>
                                         </th>
                                         <th>Photo</th>
-                                        <th>Name</th>
+                                        <th>Fullname</th>
+                                        <th>Pupil ID</th>
                                         <th>Gender</th>
-                                        <th>Occupation</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
-                                        <th>E-mail</th>
-                                        <th></th>
+                                        <th>Classname</th>
+                                        <th>Parent name</th>
+                                        <th>Parent Phone</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% for(var i = 0; i < parents.length; i++){  %>
+                                    <% for(var i = 0; i < students.length; i++){  %>
                                     <tr>
                                         <td>
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input">
-                                                <label class="form-check-label">#<%= parents[i].id %></label>
+                                                <label class="form-check-label">#<%= students[i].id %></label>
                                             </div>
                                         </td>
-                                        <td class="text-center"><img src="/admin-panel-asset/img/figure/student2.png"
-                                                alt="student"></td>
-                                        <td><%= parents[i].firstname %></td>
-                                        <td><%= parents[i].lastname %></td>
-                                        <td><%= parents[i].gender %></td>
-                                        <td><%= parents[i].address %></td>
-                                        <td><%= parents[i].phone %></td>
-                                        <td><%= parents[i].email %></td>
+                                        <td class="text-center"><img src="<%= students[i].photo %>" alt="student"></td>
+                                        <td><%= students[i].fullname %></td>
+                                        <td><%= students[i].student_id %></td>
+                                        <td><%= students[i].gender %></td>
+                                        <td><%= students[i].classname %></td>
+                                        <td><%= students[i].parentName %></td>
+                                        <td><%= students[i].parentPhone %></td>
                                         <td>
                                             <div class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -111,12 +110,18 @@
                                                     <span class="flaticon-more-button-of-three-dots"></span>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="view-parents/<%= parents[i].id %>"><i
+                                                    <a class="dropdown-item"
+                                                        href="add-result?std_id=<%= students[i].id %>+std_name=<%= students[i].fullname %>+class_id=<%= students[i].class_id %>"><i
+                                                            class="fas fa-list text-dark-pastel-green"></i>Add
+                                                        Result</a>
+                                                    <a class="dropdown-item"
+                                                        href="view-student/<%= students[i].id %>"><i
                                                             class="fas fa-eye text-dark-pastel-green"></i>View</a>
-                                                    <a class="dropdown-item" href="edit-parents/<%= parents[i].id %>"><i
+                                                    <a class="dropdown-item"
+                                                        href="edit-student/<%= students[i].id %>"><i
                                                             class="fas fa-pen text-orange-peel "></i>Edit</a>
                                                     <a class="dropdown-item"
-                                                        href="delete-parents/<%= parents[i].id %>"><i
+                                                        href="delete-student/<%= students[i].id %>"><i
                                                             class="fas fa-trash text-orange-red"></i>Delete</a>
 
 
@@ -130,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add New Parent Area End Here -->
+                <!-- List All students Area End Here -->
                 <% include ../partials/footer-tag %>
             </div>
         </div>

@@ -15,6 +15,14 @@ module.exports.showAddForm = (req, res) => {
 };
 
 
+
+// Get Classroom  Id and name
+module.exports.getAllClassroomID = async (req, res) => {
+    const classroomID = await Classroom.getAllClassID();
+    return classroomID;
+};
+
+
 module.exports.listAll = (req, res) => {
     // Fetch Classroom List
     Classroom.getAll().then(foundClassrooms => {
