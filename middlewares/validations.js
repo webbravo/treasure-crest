@@ -8,6 +8,7 @@ const {
     check,
     validationResult,
     sanitizeBody,
+    sanitizeParam
 } = require("express-validator");
 
 
@@ -334,6 +335,10 @@ module.exports = {
         .isNumeric().withMessage("No special chars allowed")
 
 
+    ],
+
+    sanitizeURLParams: [
+        sanitizeParam('id').escape().trim().toInt()
     ],
 
     addArticleValidation: [

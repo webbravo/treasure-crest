@@ -26,7 +26,7 @@ module.exports.getAllParentsID = async (req, res) => {
 
 module.exports.getParentById = async (id) => {
     const foundParent = await Parents.findById(id);
-    return foundParent[0];
+    return foundParent;
 }
 
 
@@ -87,3 +87,12 @@ module.exports.add = async (req, res) => {
 
     }
 };
+
+module.exports.view = async (req, res) => {
+    const id = req.params.id;
+    const foundParent = await Parents.findById(id);
+    res.render("teacher/view-parent", {
+        pageTitle: "Add a Parent | Treasure Crest Integrated School",
+        parent: foundParent
+    })
+}
