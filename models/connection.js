@@ -4,14 +4,14 @@
  const connection = () => {
 
      const connection = mysql.createConnection({
-         host: '127.0.0.1',
-         port: 3306,
-         user: 'root',
-         password: 'myschoolcastle#001',
-         database: 'treasure_crest',
-         timezone: 'local',
+         host: process.env.DB_HOST,
+         port: process.env.DB_POST,
+         user: process.env.DB_USER,
+         password: process.env.DB_PASS,
+         database: process.env.DB_NAME,
+         timezone: process.env.DB_TIMEZONE,
          trace: true,
-         charset: 'utf8_general_ci'
+         charset: process.env.DB_CHARSET
      });
 
      return {

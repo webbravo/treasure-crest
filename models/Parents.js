@@ -41,4 +41,10 @@ module.exports.findByEmail = async function (email) {
 }
 
 
-module.exports.findById = function (id) {}
+module.exports.findById = async (id) => {
+    const rows = await mysqlConnection.query("SELECT * FROM Parents WHERE id = ?", id);
+    return rows;
+}
+
+
+// module.exports.findById = function (id) {}

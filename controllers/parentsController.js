@@ -24,6 +24,10 @@ module.exports.getAllParentsID = async (req, res) => {
 };
 
 
+module.exports.getParentById = async (id) => {
+    const foundParent = await Parents.findById(id);
+    return foundParent[0];
+}
 
 
 // Show the add parent form
@@ -46,7 +50,7 @@ module.exports.add = async (req, res) => {
         res.render("teacher/add-parent", {
             pageTitle: "Add a Parent | Treasure Crest Integrated School",
             formData: req.body,
-            error: errors.errors
+            errors: errors.errors
         });
     } else {
 

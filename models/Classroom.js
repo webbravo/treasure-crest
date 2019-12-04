@@ -9,7 +9,9 @@ module.exports.save = (obj) => {
     return true;
 };
 
-module.exports.getById = async (id) => {
+
+module.exports.findById = async (id) => {
+    // TODO: Create a joint Select to fetch teacher's info
     const rows = await mysqlConnection.query('SELECT * FROM Class WHERE id = ?', id);
     return rows;
 };

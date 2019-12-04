@@ -15,12 +15,17 @@ module.exports.showAddForm = (req, res) => {
 };
 
 
-
 // Get Classroom  Id and name
 module.exports.getAllClassroomID = async (req, res) => {
     const classroomID = await Classroom.getAllClassID();
     return classroomID;
 };
+
+
+module.exports.getClassById = async (id) => {
+    const foundClassroom = await Classroom.findById(id);
+    return foundClassroom[0];
+}
 
 
 module.exports.listAll = (req, res) => {
@@ -42,5 +47,4 @@ module.exports.save = (req, res) => {
         req.flash('success', "New Class added!");
         return res.redirect('../teachers/add-class');
     }
-
 };

@@ -4,9 +4,6 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
-
-    <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -51,6 +48,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
                         <form class="mg-b-20">
                             <div class="row gutters-8">
                                 <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
@@ -77,7 +77,6 @@
                                                 <label class="form-check-label">ID</label>
                                             </div>
                                         </th>
-                                        <th>Photo</th>
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Occupation</th>
@@ -96,8 +95,7 @@
                                                 <label class="form-check-label">#<%= parents[i].id %></label>
                                             </div>
                                         </td>
-                                        <td class="text-center"><img src="/admin-panel-asset/img/figure/student2.png"
-                                                alt="student"></td>
+
                                         <td><%= parents[i].firstname %></td>
                                         <td><%= parents[i].lastname %></td>
                                         <td><%= parents[i].gender %></td>

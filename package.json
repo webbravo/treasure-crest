@@ -19,6 +19,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-standard": "^4.0.0",
     "express": "^4.17.1",
+    "express-back": "0.0.2",
     "express-messages": "^1.0.1",
     "express-mysql-session": "^2.1.0",
     "express-session": "^1.17.0",

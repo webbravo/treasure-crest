@@ -4,9 +4,7 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
 
-    <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -51,6 +49,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
                         <form class="mg-b-20">
                             <div class="row gutters-8">
                                 <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
@@ -67,7 +68,7 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="table-responsive">
+                        <div class="table-responsive ">
                             <table class="table display data-table text-nowrap">
                                 <thead>
                                     <tr>
@@ -85,6 +86,7 @@
                                         <th>Parent name</th>
                                         <th>Parent Phone</th>
                                         <th>Actions</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -93,7 +95,8 @@
                                         <td>
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input">
-                                                <label class="form-check-label">#<%= students[i].id %></label>
+                                                <label class="form-check-label"><%= "#TCS" %></label>
+
                                             </div>
                                         </td>
                                         <td class="text-center"><img src="<%= students[i].photo %>" alt="student"></td>
@@ -111,20 +114,18 @@
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item"
-                                                        href="add-result?std_id=<%= students[i].id %>+std_name=<%= students[i].fullname %>+class_id=<%= students[i].class_id %>"><i
+                                                        href="/teachers/add-result?stud_id=<%= students[i].id %>&stud_name=<%= students[i].fullname %>&class_id=<%= students[i].class_id %>"><i
                                                             class="fas fa-list text-dark-pastel-green"></i>Add
                                                         Result</a>
                                                     <a class="dropdown-item"
-                                                        href="view-student/<%= students[i].id %>"><i
+                                                        href="/teachers/view-student?stud_id=<%= students[i].id %>&parent_1=<%= students[i].parent_1 %>&parent_2=<%= students[i].parent_2 %>&class_id=<%= students[i].class_id %>"><i
                                                             class="fas fa-eye text-dark-pastel-green"></i>View</a>
                                                     <a class="dropdown-item"
-                                                        href="edit-student/<%= students[i].id %>"><i
+                                                        href="/teachers/edit-student/<%= students[i].id %>"><i
                                                             class="fas fa-pen text-orange-peel "></i>Edit</a>
                                                     <a class="dropdown-item"
-                                                        href="delete-student/<%= students[i].id %>"><i
+                                                        href="/teachers/delete-student/<%= students[i].id %>"><i
                                                             class="fas fa-trash text-orange-red"></i>Delete</a>
-
-
                                                 </div>
                                             </div>
                                         </td>

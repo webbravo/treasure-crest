@@ -2844,6 +2844,7 @@ ul {
 
 .single-info-details .item-img {
   margin-right: 40px;
+  max-width: 400px;
 }
 
 @media only screen and (max-width: 1199px) {
