@@ -3,8 +3,6 @@ require('dotenv').config({
   path: 'variables.env'
 });
 
-
-
 // READY?! Let's go!
 
 // import all of our models file

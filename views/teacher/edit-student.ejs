@@ -4,9 +4,7 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
 
-    <!-- Preloader End Here -->
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -92,13 +90,14 @@
                                     <label>Gender *</label>
                                     <select name="gender" class="select2" required>
 
-                                        <option value="">Please Select Gender *</option>
-                                        <option
-                                            <%= (typeof student !== 'undefined'  && student.gender === 'male' ) ? selected="selected" : ''  %>
-                                            value="male">Male</option>
-                                        <option
-                                            <%= (typeof student !== 'undefined'  && student.gender === 'female' ) ? selected="selected"  : ''  %>
-                                            value="female">Female</option>
+                                        <option value="">Please Select Gender * </option>
+                                        <option value="male"
+                                            <%= (typeof student !== 'undefined'  && student.gender === 'male' ) ? selected="selected" : ''  %>>
+                                            Male</option>
+                                        <option value="female"
+                                            <%= (typeof student !== 'undefined'  && student.gender === 'memale' ) ? selected="selected" : ''  %>>
+                                            Female</option>
+
                                     </select>
                                 </div>
 

@@ -232,8 +232,8 @@ module.exports.update = async (req, res, next) => {
         const foundParent = await parentController.getAllParentsID();
 
         // Re-Render the add a student form
-        res.render("teacher/add-student", {
-            pageTitle: "Add a Student | Treasure Crest Integrated School",
+        res.render("teacher/edit-student", {
+            pageTitle: "Edit a Student | Treasure Crest Integrated School",
             classrooms: foundClassroom,
             parents: foundParent,
             formData: req.body,

@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+
+
+
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <% include ../partials/sidebar %>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Parents</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li>Add New Parents</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Add New Parent Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Add a Classroom</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+                        <br>
+                        <form method="POST" action="add-class" class="new-added-form">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Classroom Name *</label>
+                                    <input type="text" name="name" placeholder="Example Basic 2 blue"
+                                        class="form-control" required>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-9 col-12 form-group">
+                                    <label>Class Teacher *</label>
+                                    <select name="teacher_id" class="select2">
+                                        <option>Please Select Teacher *</option>
+                                        <% teachers.forEach(function (teacher, index, arr){ %>
+                                        <option value="<%= teacher.id %>">
+                                            <%= teacher.firstname + " " + teacher.lastname %>
+                                        </option>
+                                        <%}); %>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Year</label>
+                                    <input type="number" name="year" placeholder="Classroom Year" class="form-control"
+                                        required>
+                                </div>
+
+                                <div class="col-lg-6 col-6 form-group mg-t-30">
+                                    <label class="text-dark-medium">Classroom Photo (600px X 600px)</label>
+                                    <input type="file" name="photo" class="form-control-file">
+                                </div>
+
+                                <div class="col-lg-9 col-12 form-group">
+                                    <label>Description</label>
+                                    <textarea class="textarea form-control" name="description" id="form-message"
+                                        cols="10" rows="9" required></textarea>
+                                </div>
+
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                    <button type="reset"
+                                        class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Add New Parent Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>

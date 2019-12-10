@@ -4,14 +4,11 @@
  const connection = () => {
 
      const connection = mysql.createConnection({
-         host: process.env.DB_HOST,
-         port: process.env.DB_POST,
-         user: process.env.DB_USER,
-         password: process.env.DB_PASS,
-         database: process.env.DB_NAME,
-         timezone: process.env.DB_TIMEZONE,
-         trace: true,
-         charset: process.env.DB_CHARSET
+         host: "remotemysql.com",
+         user: "tvoXpSQy4q",
+         password: "xEWRbca5OT",
+         database: "tvoXpSQy4q",
+         port: 3306
      });
 
      return {

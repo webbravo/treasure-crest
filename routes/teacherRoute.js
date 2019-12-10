@@ -109,10 +109,11 @@ router.post("/add-parents", auth.isTeacher, validator.addParentValidation, paren
 router.get("/view-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.view);
 
 // Edit Parents
-router.get("/edit-parent/:id", auth.isTeacher, validator.sanitizeURLParams);
+router.get("/edit-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.renderEditForm);
+router.post("/edit-parent/:id", auth.isTeacher, validator.updateParentValidation, parentsController.update);
 
 // Delete Parents
-router.get("/delete-parent/:id", auth.isTeacher, validator.sanitizeURLParams);
+router.get("/delete-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.delete);
 
 
 
