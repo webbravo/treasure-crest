@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+    <!-- Preloader Start Here -->
+
+    <!-- Preloader End Here -->
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <% include ../partials/sidebar %>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Parents</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li>Add New Parents</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Add New Parent Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Add New Parents</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+                        <br>
+                        <form method="POST" action="<%= parent.id %>" class="new-added-form">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" name="firstname" placeholder="Firstname" class="form-control"
+                                        required
+                                        value="<%= (typeof parent !== 'undefined'  && parent.firstname ) ? parent.firstname : ''  %>">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" name="lastname" placeholder="Lastname" class="form-control"
+                                        required
+                                        value="<%= (typeof parent !== 'undefined'  && parent.lastname ) ? parent.lastname : ''  %>">
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Gender *</label>
+                                    <select name="gender" class="select2" required>
+                                        <option value="">Please Select Gender *</option>
+                                        <option
+                                            <%= (typeof parent !== 'undefined'  && parent.gender === 'male' ) ? selected="selected" : ''  %>
+                                            value="male">Male</option>
+                                        <option
+                                            <%= (typeof parent !== 'undefined'  && parent.gender === 'female' ) ? selected="selected"  : ''  %>
+                                            value="female">Female</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Phone *</label>
+                                    <input type="text" name="phone" placeholder=" Parent Phone number"
+                                        class="form-control" required
+                                        value="<%= (typeof parent !== 'undefined'  && parent.phone ) ? parent.phone : ''  %>">
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                    <label>Address</label>
+                                    <input type="text" name="address" placeholder="House Address" class="form-control"
+                                        required
+                                        value="<%= (typeof parent !== 'undefined'  && parent.address ) ? parent.address : ''  %>">
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Occupation</label>
+                                    <input name="occupation" type="text" placeholder="Current Occupation"
+                                        class="form-control" required
+                                        value="<%= (typeof parent !== 'undefined'  && parent.occupation ) ? parent.occupation : ''  %>">
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Religion *</label>
+                                    <select name="religion" class="select2" required>
+                                        <option value="">Please Select Religion *</option>
+                                        <option value="christian"
+                                            <%= (typeof parent !== 'undefined'  && parent.religion === 'christian' ) ? selected="selected" : ''%>>
+                                            Christian</option>
+                                        <option value="muslim"
+                                            <%= (typeof parent !== 'undefined'  && parent.religion === 'muslim' ) ? selected="selected" : ''%>>
+                                            Muslim</option>
+                                        <option value="others"
+                                            <%= (typeof parent !== 'undefined'  && parent.religion === 'others' ) ? selected="selected" : ''%>>
+                                            Others
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>E-Mail</label>
+                                    <input type="email" name="email" placeholder="email" class="form-control"
+                                        value="<%= (typeof parent !== 'undefined'  && parent.email ) ? parent.email : ''  %>"
+                                        required>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Password</label>
+                                    <input id="password" type="password" name="password" placeholder="Enter Password"
+                                        class="form-control">
+                                </div>
+
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Confirm Password</label>
+                                    <input id="conPassword" type="password" name="conPassword"
+                                        placeholder="Confirm Password" class="form-control">
+                                </div>
+
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
+                                    <button type="reset"
+                                        class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Add New Parent Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+    <script>
+        var password = document.getElementById("password"),
+            conPassword = document.getElementById("conPassword");
+
+        function validatePassword() {
+            if (password.value != conPassword.value) {
+                conPassword.setCustomValidity("Passwords Don't Match");
+            } else {
+                conPassword.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        conPassword.onkeyup = validatePassword;
+    </script>
+
+</body>
+
+</html>

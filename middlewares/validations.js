@@ -8,6 +8,7 @@ const {
     check,
     validationResult,
     sanitizeBody,
+    sanitizeParam
 } = require("express-validator");
 
 
@@ -142,6 +143,68 @@ module.exports = {
                 return true;
             }
         }).withMessage("Password don't Match")
+    ],
+
+    updateParentValidation: [
+        check('firstname')
+        .trim()
+        .isLength({
+            min: 3
+        })
+        .withMessage("First name too short! "),
+
+        check('lastname')
+        .trim()
+        .isLength({
+            min: 3
+        })
+        .withMessage("Last name too short! "),
+
+        check("gender")
+        .trim()
+        .isLength({
+            min: 4
+        }).withMessage("Enter valid gender"),
+
+
+        check("phone")
+        .trim()
+        .isLength({
+            min: 11
+        }).withMessage("phone must be leat 11 chars")
+        .isNumeric().withMessage("No special chars allowed"),
+
+        check("address")
+        .trim()
+        .isLength({
+            min: 10
+        }).withMessage("House address is too short!"),
+
+
+
+        check("occupation")
+        .trim()
+        .isLength({
+            min: 4
+        }).withMessage("Occupation name too short!"),
+
+        check("religion")
+        .trim()
+        .isLength({
+            min: 4
+        }).withMessage("Religion name too short!"),
+
+
+        check("email")
+        .trim()
+        .isLength({
+            min: 3
+        })
+        .isEmail({
+            domain_specific_validation: false
+        })
+        .withMessage("Enter a valid email address")
+
     ],
 
     addClassroomValidation: [
@@ -334,6 +397,10 @@ module.exports = {
         .isNumeric().withMessage("No special chars allowed")
 
 
+    ],
+
+    sanitizeURLParams: [
+        sanitizeParam('id').escape().trim().toInt()
     ],
 
     addArticleValidation: [

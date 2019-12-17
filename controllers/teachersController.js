@@ -14,7 +14,6 @@ module.exports.login = (req, res) => {
     } = req.body;
 
 
-
     // Search for teacher by email
     Teachers.findByEmail(email).then(foundTeacher => {
 

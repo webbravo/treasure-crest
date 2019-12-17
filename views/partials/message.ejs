@@ -1,13 +1,23 @@
-    <% if(error && Array.isArray(error) && error.length > 0) { %>
-    <% Object.keys(error).forEach(key => { %>
+    <% if(errors && Array.isArray(errors) && errors.length > 0) { %>
+    <% Object.keys(errors).forEach(key => { %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <%- error[key]["msg"];  %>
+        <%- errors[key]["msg"];  %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
     </div>
     <% }); %>
     <% }  %>
+
+
+    <% if(error && error.length > 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%-error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <% } %>
 
 
     <% if(typeof duplicateError !== 'undefined' && duplicateError.length > 0) { %>

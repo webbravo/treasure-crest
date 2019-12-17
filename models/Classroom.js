@@ -9,9 +9,40 @@ module.exports.save = (obj) => {
     return true;
 };
 
-module.exports.getById = async (id) => {
-    const rows = await mysqlConnection.query('SELECT * FROM Class WHERE id = ?', id);
-    return rows;
+module.exports.update = (obj, classroomId) => {
+    // Execute and Update Classroom Details
+    try {
+        mysqlConnection.query("UPDATE Class SET ? WHERE id = ?", [
+            obj,
+            classroomId
+        ]);
+        return true;
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+
+module.exports.findById = async (id) => {
+    try {
+        const sql = `SELECT
+                        Class.id AS id,
+                        Class.name AS name,
+                        Class.description AS description,
+                        Class.photo AS photo,
+                        Class.year AS year,
+                        Teachers.id AS teacher_id,
+                        CONCAT (Teachers.firstname, ' ', Teachers.lastname) AS teachername
+                        FROM Class
+                        INNER JOIN Teachers ON Class.teacher_id = Teachers.id
+                        WHERE Class.id = ? AND Class.status = 1
+                    `;
+        const rows = await mysqlConnection.query(sql, id);
+        return rows[0];
+    } catch (error) {
+        console.error(error);
+    }
+
 };
 
 module.exports.getAll = async () => {

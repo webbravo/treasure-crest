@@ -4,14 +4,11 @@
  const connection = () => {
 
      const connection = mysql.createConnection({
-         host: '127.0.0.1',
-         port: 3306,
-         user: 'root',
-         password: 'myschoolcastle#001',
-         database: 'treasure_crest',
-         timezone: 'local',
-         trace: true,
-         charset: 'utf8_general_ci'
+         host: "remotemysql.com",
+         user: "tvoXpSQy4q",
+         password: "xEWRbca5OT",
+         database: "tvoXpSQy4q",
+         port: 3306
      });
 
      return {

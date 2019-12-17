@@ -1,11 +1,9 @@
 const mysqlConnection = require('../models/connection');
 
 module.exports.save = function (obj) {
-
     // Execute to Save teacher to the DB
     mysqlConnection.query('INSERT INTO Teachers SET ?', obj);
     return true;
-
 };
 
 
