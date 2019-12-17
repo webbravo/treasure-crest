@@ -22,6 +22,7 @@
          },
          commit() {
              return util.promisify(connection.commit)
+
                  .call(connection);
          },
          rollback() {
