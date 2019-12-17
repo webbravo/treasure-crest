@@ -77,7 +77,8 @@ module.exports.add = async (req, res) => {
             // Pass Parent Object to DB
             const addParent = Parents.save(req.body);
             if (addParent === true) {
-                req.flash('success', "New Parent added!");
+                req.flash("success",
+                    `A new Parent Added!  Check <a href='/teachers/view-parent/${parentId}'>Parent</a> here`);
                 return res.redirect('../teachers/add-parents');
             }
         }
@@ -144,14 +145,12 @@ module.exports.update = async (req, res, next) => {
     } else {
 
         if (req.body.password) {
-
-            // Delete confirm password from the body Object
-            delete req.body.conPassword;
-
             // Hash Password
             req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
         }
 
+        // Delete confirm password from the body Object
+        delete req.body.conPassword;
 
         // Pass Parent Object to DB
         if (Parents.update(req.body, parentId) === true) {

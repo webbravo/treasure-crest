@@ -222,10 +222,11 @@ module.exports.renderEditForm = async (req, res, next) => {
 
 // Update a student record
 module.exports.update = async (req, res, next) => {
-    //  TODO: Sanitatize student ID
+
+    //  Student id
     const studentId = req.params.id;
 
-    //  Chcek if there is an error!
+    //  Check if there is an error!
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         const foundClassroom = await classController.getAllClassroomID();

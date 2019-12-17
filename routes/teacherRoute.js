@@ -123,13 +123,19 @@ router.get("/delete-parent/:id", auth.isTeacher, validator.sanitizeURLParams, pa
 //  Display the lsit of classroom
 router.get("/all-class", auth.isTeacher, classroomController.listAll);
 
+// View a class detaisl route
+router.get("/view-class/:id", auth.isTeacher, validator.sanitizeURLParams, classroomController.viewClass);
+
+
 // Add A Classroom
 router.get("/add-class", auth.isTeacher, classroomController.showAddForm);
-router.post(
-    "/add-class",
-    auth.isTeacher,
-    validator.addClassroomValidation,
-    classroomController.save
-);
+router.post("/add-class", auth.isTeacher, validator.addClassroomValidation, classroomController.save);
+
+// Edit / Update a classroom
+router.get("/edit-class/:id", auth.isTeacher, validator.sanitizeURLParams, classroomController.renderEditForm);
+router.post("/edit-class/:id", auth.isTeacher, validator.addClassroomValidation, classroomController.update);
+
+
+
 
 module.exports = router;
