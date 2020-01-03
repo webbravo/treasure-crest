@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+
+    <% const isActive = "student"; %>
+
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <% include ../partials/sidebar %>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Result</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li> Result Sheet</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Add Result Result Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3> Result sheet for <%=  students.firstname +" "+ students.lastname  %> </h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <!-- <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a> -->
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+
+
+                        <div class="table-responsive ">
+                            <table class="table display data-table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Session</th>
+                                        <th>Term</th>
+                                        <th>Date</th>
+                                        <th>Result</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i = 0; i < results.length; i++){  %>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input">
+                                                <label class="form-check-label">
+                                                    <%= results[i].classname %>
+                                                </label>
+
+                                            </div>
+                                        </td>
+                                        <td><%= results[i].session %></td>
+                                        <td><%= results[i].term %></td>
+                                        <td><%= results[i].date %></td>
+                                        <td>
+                                            <a target="_blank" href="<%= results[i].result %>">
+                                                <i class="fas fa-file-pdf fa-2x"></i>
+                                            </a>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+
+                                                    <a class="dropdown-item"
+                                                        href="/teachers/result-sheet/<%= results[i].student_id%>/edit/<%= results[i].id %>"><i
+                                                            class="fas fa-pen text-orange-peel "></i>Edit</a>
+                                                    <a class="dropdown-item"
+                                                        href="/teachers/result-sheet/<%= results[i].student_id%>/delete/<%= results[i].id %>"><i
+                                                            class="fas fa-trash text-orange-red"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <button type="button" type="button" data-toggle="modal" data-target="#sign-up"
+                            class="modal-trigger btn-fill-lg bg-blue-dark btn-hover-yellow">
+                            Add
+                            Result
+                            <i class="fas fa-plus"></i>
+                        </button>
+
+
+
+                        <!-- Sign Up Modal -->
+                        <div class="modal sign-up-modal fade" id="sign-up" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="close-btn">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <form id="result-sheet" enctype="multipart/form-data" method="POST"
+                                            action="/teachers/add-result/<%= students.id %>" class="new-added-form">
+                                            <div class="row">
+
+                                                <div class=" col-12 form-group">
+                                                    <label>Student Class</label>
+                                                    <select name="classname" class="select2" required>
+                                                        <option value="">Please a Classroom *</option>
+                                                        <% classrooms.forEach(function (classroom, index, arr){ %>
+                                                        <option value="<%= classroom.name %>"
+                                                            <%= (typeof formData !== 'undefined'  && formData.class_id == classroom.id ) ? selected="selected" : ''  %>>
+                                                            <%= classroom.name %>
+                                                        </option>
+                                                        <%}); %>
+                                                    </select>
+                                                </div>
+
+
+                                                <div class=" col-12 form-group">
+                                                    <label>Academic TERM</label>
+                                                    <select name="term" class="select2" required>
+                                                        <option value="">Please Select TERM *</option>
+                                                        <option value="1st term"
+                                                            <%= (typeof formData !== 'undefined'  && formData.term === '1st term' ) ? selected="selected" : ''  %>>
+                                                            1st Term</option>
+                                                        <option value="2nd term"
+                                                            <%= (typeof formData !== 'undefined'  && formData.term === '2nd term' ) ? selected="selected" : ''  %>>
+                                                            2nd Term</option>
+                                                        <option value="3rd term"
+                                                            <%= (typeof formData !== 'undefined'  && formData.term === '3rd term' ) ? selected="selected" : ''  %>>
+                                                            3rd Term</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-12 form-group">
+                                                    <label>Academic Session</label>
+                                                    <input type="text" name="session" placeholder="2001/2002"
+                                                        value="<%= (typeof formData !== 'undefined'  && formData.academic_session ) ? formData.academic_session : ''  %>"
+                                                        class="form-control" required>
+                                                </div>
+
+
+                                                <div class="col-12 form-group">
+                                                    <label> Date of entry *</label>
+                                                    <input type="text" name="date" placeholder="dd/mm/yyyy"
+                                                        class="form-control air-datepicker" data-position="bottom right"
+                                                        required
+                                                        value="<%= (typeof formData !== 'undefined'  && formData.admission_date ) ? formData.admission_date : ''  %>">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                </div>
+
+
+                                                <div class="col-12 form-group mg-t-10">
+                                                    <label class="text-dark-medium">Student Result (PDF only)
+                                                        *</label>
+                                                    <input id="pdf_result" name="result" type="file"
+                                                        class="form-control-file" accept="application/pdf" required>
+                                                </div>
+
+                                                <div class=" col-12 form-group mg-t-8">
+                                                    <button type="submit"
+                                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                                    <button type="reset"
+                                                        class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sign Up Modal -->
+
+                    </div>
+                </div>
+                <!-- Results Sheet Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>

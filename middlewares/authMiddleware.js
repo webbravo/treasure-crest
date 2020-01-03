@@ -31,7 +31,7 @@ module.exports.isAdmin = (req, res, next) => {
 
 module.exports.redirectTeacherHome = (req, res, next) => {
     if (req.session.teacherID) {
-        res.redirect("../teachers/dashboard");
+        res.redirect("../teachers/");
     }
     next();
 };

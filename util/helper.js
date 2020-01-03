@@ -14,3 +14,8 @@ module.exports.redirect_to = (req, res, location) => {
     const targetUrl = targetBaseUrl() + location;
     return res.redirect(targetUrl);
 }
+
+
+module.exports.added_by = (req, res, next) => {
+    console.log(req.session.teacherName)
+};
