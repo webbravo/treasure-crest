@@ -29,6 +29,17 @@ package2.json
 #Access Log
 access.log
 
-# The Photos plan
+# The Photos Folder
 public/uploads/students/*
 
+
+# The Result folder
+public/uploads/results/*
+
+
+# Ignore any .sql File
+*.sql
+
+
+# Ignore GIT ignore
+.gitingnore

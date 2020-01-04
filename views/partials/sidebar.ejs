@@ -9,9 +9,10 @@
             <li class="nav-item">
                 <a href="/teachers" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></a>
             </li>
-            <li class="nav-item sidebar-nav-item">
+            <li class="nav-item sidebar-nav-item ">
                 <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
-                <ul class="nav sub-group-menu">
+                <ul
+                    class="nav sub-group-menu <%= (typeof isActive !== 'undefined'  && isActive === 'student' ) ? 'sub-group-active' : ''  %>">
                     <li class="nav-item">
                         <a href="/teachers/all-students" class="nav-link"><i class="fas fa-angle-right"></i>List all
                             Students</a>
@@ -22,11 +23,6 @@
                             a Student</a>
                     </li>
                     <% }%>
-
-                    <li class="nav-item">
-                        <a href="/teachers/add-student-result" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                            Result</a>
-                    </li>
 
                     <li class="nav-item">
                         <a href="/teachers/student-promotion" class="nav-link"><i
@@ -55,7 +51,8 @@
             </li>
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i class="flaticon-couple"></i><span>Parents</span></a>
-                <ul class="nav sub-group-menu">
+                <ul
+                    class="nav sub-group-menu  <%= (typeof isActive !== 'undefined'  && isActive === 'parent' ) ? 'sub-group-active' : ''  %>">
                     <li class="nav-item">
                         <a href="/teachers/all-parents" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Parents</a>
@@ -69,7 +66,8 @@
             <li class="nav-item sidebar-nav-item">
                 <a href="#" class="nav-link"><i
                         class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
-                <ul class="nav sub-group-menu">
+                <ul class="nav sub-group-menu
+                <%= (typeof isActive !== 'undefined'  && isActive === 'class' ) ? 'sub-group-active' : ''  %>">
                     <li class="nav-item">
                         <a href="/teachers/all-class" class="nav-link"><i class="fas fa-angle-right"></i>All
                             Classes</a>

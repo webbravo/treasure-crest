@@ -1,6 +1,7 @@
 const Student = require("../models/Students");
 const classController = require("../controllers/classController");
 const parentController = require("../controllers/parentsController");
+const resultController = require("../controllers/resultController");
 
 const multer = require("multer");
 const jimp = require("jimp");
@@ -254,7 +255,6 @@ module.exports.update = async (req, res, next) => {
             );
             return res.redirect("back");
 
-            // view-student?&parent_2=<%= students[i].parent_2 %> %>
         }
     }
 };

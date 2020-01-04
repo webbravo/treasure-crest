@@ -2,6 +2,7 @@ const express = require("express");
 const teacherController = require("../controllers/teachersController");
 const parentsController = require("../controllers/parentsController");
 const studentController = require("../controllers/studentController");
+const resultController = require("../controllers/resultController");
 const classroomController = require("../controllers/classController");
 const auth = require("../middlewares/authMiddleware");
 const validator = require("../middlewares/validations");
@@ -84,7 +85,40 @@ router.post(
 );
 
 // Delete a student record (We do not delete student, but ony update the status)
-router.get("/delete-student/:id", auth.isTeacher, validator.sanitizeURLParams, studentController.delete);
+router.get(
+    "/delete-student/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    studentController.delete
+);
+
+/**==================ALL THE STUDENT RELATED ROUTES====================**/
+
+
+
+/**==================ALL RESULT RELATED ROUTES====================**/
+// Show result sheet
+router.get("/result-sheet/:studentId", auth.isTeacher, resultController.resultSheet);
+
+// Add  result
+router.get("/add-result/:studentId", auth.isTeacher, resultController.resultSheet);
+router.post(
+    "/add-result/:studentId",
+    auth.isTeacher,
+    resultController.upload,
+    resultController.addResult
+);
+
+// Edit Result
+router.get("/result-sheet/:studentId/edit/:resultId", auth.isTeacher, resultController.editForm);
+router.post("/result-sheet/:studentId/edit/:resultId", auth.isTeacher, resultController.upload, resultController.update);
+
+// Delete Result
+router.get("/result-sheet/:studentId/delete/:resultId", auth.isTeacher, resultController.deleteResult)
+
+/**==================ALL RESULT RELATED ROUTES====================**/
+
+
 
 /**==================ALL PARENT RELATED ROUTES====================**/
 
@@ -103,20 +137,42 @@ router.get(
 
 // Add Parents
 router.get("/add-parents", auth.isTeacher, parentsController.showAddForm);
-router.post("/add-parents", auth.isTeacher, validator.addParentValidation, parentsController.add);
+router.post(
+    "/add-parents",
+    auth.isTeacher,
+    validator.addParentValidation,
+    parentsController.add
+);
 
 // View a parent
-router.get("/view-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.view);
+router.get(
+    "/view-parent/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    parentsController.view
+);
 
 // Edit Parents
-router.get("/edit-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.renderEditForm);
-router.post("/edit-parent/:id", auth.isTeacher, validator.updateParentValidation, parentsController.update);
+router.get(
+    "/edit-parent/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    parentsController.renderEditForm
+);
+router.post(
+    "/edit-parent/:id",
+    auth.isTeacher,
+    validator.updateParentValidation,
+    parentsController.update
+);
 
 // Delete Parents
-router.get("/delete-parent/:id", auth.isTeacher, validator.sanitizeURLParams, parentsController.delete);
-
-
-
+router.get(
+    "/delete-parent/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    parentsController.delete
+);
 
 /**==================ALL CLASS RELATED ROUTES====================**/
 
@@ -124,18 +180,34 @@ router.get("/delete-parent/:id", auth.isTeacher, validator.sanitizeURLParams, pa
 router.get("/all-class", auth.isTeacher, classroomController.listAll);
 
 // View a class detaisl route
-router.get("/view-class/:id", auth.isTeacher, validator.sanitizeURLParams, classroomController.viewClass);
-
+router.get(
+    "/view-class/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    classroomController.viewClass
+);
 
 // Add A Classroom
 router.get("/add-class", auth.isTeacher, classroomController.showAddForm);
-router.post("/add-class", auth.isTeacher, validator.addClassroomValidation, classroomController.save);
+router.post(
+    "/add-class",
+    auth.isTeacher,
+    validator.addClassroomValidation,
+    classroomController.save
+);
 
 // Edit / Update a classroom
-router.get("/edit-class/:id", auth.isTeacher, validator.sanitizeURLParams, classroomController.renderEditForm);
-router.post("/edit-class/:id", auth.isTeacher, validator.addClassroomValidation, classroomController.update);
-
-
-
+router.get(
+    "/edit-class/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    classroomController.renderEditForm
+);
+router.post(
+    "/edit-class/:id",
+    auth.isTeacher,
+    validator.addClassroomValidation,
+    classroomController.update
+);
 
 module.exports = router;
