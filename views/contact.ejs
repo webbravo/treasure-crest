@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<% pageTitle = "Contact Information" %>
+
+
+<!-- Header -->
+<% include partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<%include partials/navbar-mobile %>
+
+
+
+<div class="google-map-area">
+
+    <div id="contacts" class="map-area">
+        <div id="googleMap" style="width:100%;height:451px;">
+            <iframe style="width:100%;height:451px;"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.023750169032!2d5.797722405222476!3d5.563497536289211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1041add4f188f7b1%3A0x388038baf0aee797!2sTreasure%20Crest%20Integrated%20School!5e0!3m2!1sen!2sng!4v1578797234839!5m2!1sen!2sng"
+                frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-area-container">
+                    <div class="single-title">
+                        <h3>Contact Info</h3>
+                    </div>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. </p> -->
+                    <div class="contact-address-container">
+                        <div class="contact-address-info">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <span>13 Pa Aze Ezo Street, Off Edeyan Street, By Masoje Junction,
+                                    <br> P.T.I Road, Effurun, Delta State</span>
+                            </div>
+                        </div>
+                        <div class="contact-address-info">
+                            <div class="contact-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <span><a href="tel:09079488546">(090) 7948 - 8546</a> </span>
+                            </div>
+                        </div>
+                        <div class="contact-address-info">
+                            <div class="contact-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <span><a href="https://websitedownloader.io/cdn-cgi/l/email-protection"
+                                        class="__cf_email__"
+                                        data-cfemail="f796939a9e99b78798809285da959898848384d994989a">[email&#160;protected]</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <div class="single-title">
+                        <h3>Send A Message</h3>
+                    </div>
+                    <div class="contact-form-container">
+                        <form action="https://devitems.com/tf/techedu-preview/techedu/mail.php" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" placeholder="Your Name *">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Your Email *">
+                                </div>
+                            </div>
+                            <input type="text" name="subject" placeholder="Subject *">
+                            <textarea name="message" class="yourmessage" placeholder="Your message"></textarea>
+                            <button type="submit" class="button-default button-yellow"><i
+                                    class="fa fa-send"></i>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/public-footer %>
+
+</body>
+
+</html>

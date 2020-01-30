@@ -45,7 +45,7 @@ module.exports.login = (req, res) => {
             }
         }).catch(error => {
             return console.error(error);
-        });;
+        });
 
     }).catch(error => {
         return console.error(error);

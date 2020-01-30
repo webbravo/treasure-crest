@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<% pageTitle = "Parent Dashboard" %>
+
+
+<!-- Header -->
+<% include ../partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include ../partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<%include ../partials/navbar-mobile %>
+
+
+<div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">My Children</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Children</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="class-list-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="class-menu">
+
+                    <div class="pull-right">
+                        <a href="parents/logout" type="submit" class="button-default button-yellow"><i
+                                class="fa fa-send"></i>Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-lg-8  col-md-8">
+                <% students.forEach(function(student, index, arr){  %>
+                <div class="class-list-item">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-6">
+                            <a href="parents/child/<%= student.id %>"><img src="<%= student.photo %>" alt=""></a>
+                        </div>
+                        <div class="col-lg-7 col-md-6 col-sm-6">
+                            <div class="class-list-text">
+                                <h3><a
+                                        href="parents/child/<%= student.id %>"><%= student.firstname + " " +  student.middlename + " " + student.lastname %></a>
+                                </h3>
+                                <div class="class-information">
+                                    <span><strong>Date of Birth</strong>: <%= student.dob %> </span>
+                                    <span><strong>Gender</strong>: <%= student.gender %> </span>
+                                    <span><strong>Student ID</strong>: <%= student.student_id %> </span>
+                                    <span><strong>Start Date</strong>: March 25, 2016</span>
+                                </div>
+
+                                <a href="parents/child/<%= student.id %>" class="button-default">Check Info <i
+                                        class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/public-footer %>
+
+</body>
+
+</html>

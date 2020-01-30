@@ -1,183 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Treasure Crest Integrated School</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#451fa4">
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700|Montserrat&display=swap'
-        rel='stylesheet' type='text/css'>
+<% pageTitle = "Welcome to " %>
 
-    <link rel="stylesheet" href="/css/import.css">
+<!-- Header -->
+<% include partials/public-header %>
 
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-<header>
-    <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-7 hidden-xs">
-                    <div class="header-top-info">
-                        <span>Open hours: 7:00am - 5:00pm Mon-Fri</span>
-                        <div class="social-links">
-                            <a href="/#"><i class="fa fa-facebook"></i></a>
-                            <a href="/#"><i class="fa fa-google-plus"></i></a>
-                            <a href="/#"><i class="fa fa-twitter"></i></a>
-                            <a href="/#"><i class="fa fa-pinterest-p"></i></a>
-                            <a href="/#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-sm-5">
-                    <div class="header-login-register">
-                        <ul class="login">
-                            <li>
-                                <a href="/#"><i class="fa fa-key"></i>Login</a>
-                                <div class="login-form">
-                                    <h4>Login</h4>
-                                    <form action="https://treasurecrestschools.com/#" method="post">
-                                        <div class="form-box">
-                                            <i class="fa fa-user"></i>
-                                            <input type="text" name="email" placeholder="Email">
-                                        </div>
-                                        <div class="form-box">
-                                            <i class="fa fa-lock"></i>
-                                            <input type="password" name="password" placeholder="Password">
-                                        </div>
-                                        <div class="button-box">
+<!-- Navbar for Desktop -->
+<% include partials/navbar %>
 
-                                            <button type="submit" class="login-btn">Login</button>
-                                        </div>
-                                        <span><a class="display:inline" href="/teachers">Teacher Login</a></span>
+<!-- Navbar for Mobile -->
+<%include partials/navbar-mobile %>
 
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<div class="header-logo-menu sticker">
-    <div class="container">
-        <div class="logo-menu-bg">
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <div class="logo">
-                        <a href="/"><img src="img/logo/logo.jpg" alt="Treasure Crest Integrated School"></a>
-                    </div>
-                </div>
-                <div class="col-md-9 hidden-sm hidden-xs">
-                    <div class="mainmenu-area">
-                        <div class="mainmenu">
-                            <nav>
-                                <ul id="nav">
-                                    <li class="current"><a href="/">Home</a></li>
-
-                                    <li><a href="about.html">About us</a></li>
-                                    <!-- <li><a href="class-grid.html">Classes <i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="class-grid.html">Classes Grid</a></li>
-                                            <li><a href="class-list.html">Classes List</a></li>
-                                            <li><a href="class-details.html">Class Details</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li><a href="teacher.html">Teachers<i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="teacher-info.html">Teachers Info</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <!-- <li><a href="/">Pages <i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="blog.html">Blog Page</a></li>
-                                            <li><a href="blog-details.html">Blog Details Page</a></li>
-                                            <li><a href="class-grid.html">Class Grid</a></li>
-                                            <li><a href="class-list.html">Class List</a></li>
-                                            <li><a href="class-details.html">Class Details</a></li>
-                                            <li><a href="teacher.html">Teachers Page</a></li>
-                                            <li><a href="teacher-info.html">Teachers Info</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li><a href="blog.html">Blog<i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <ul class="header-search">
-                            <li class="search-menu">
-                                <i id="toggle-search" class="fa fa-search"></i>
-                            </li>
-                        </ul>
-
-                        <div class="search">
-                            <div class="search-form">
-                                <form id="search-form" action="/search ">
-                                    <input type="search" placeholder="Search here..." name="search" />
-                                    <button type="submit">
-                                        <span><i class="fa fa-search"></i></span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mobile-menu-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="mobile-menu">
-                    <nav id="dropdown">
-                        <ul>
-                            <li><a href="/">HOME</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="class-grid.html">Classes</a>
-                                <ul>
-                                    <li><a href="class-grid.html">Classes Grid</a></li>
-                                    <li><a href="class-list.html">Classes List</a></li>
-                                    <li><a href="class-details.html">Class Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="teacher.html">Teachers Page</a>
-                                <ul>
-                                    <li><a href="teacher-info.html">Teachers Info</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="blog.html">Blog Page</a>
-                                <ul>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="slider-area slider-three-area">
@@ -476,161 +310,17 @@
 <div class="google-map-area">
 
     <div id="contacts" class="map-area">
-        <div id="googleMap" style="width:100%;height:451px;"></div>
-    </div>
-</div>
-
-
-<div class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="footer-info-container text-center section-padding">
-                    <div class="footer-logo">
-                        <a href="index-2.html#"><img src="/admin-panel-asset/img/logo/footer-logo.png" alt=""></a>
-                    </div>
-                    <div class="footer-info">
-                        <span><i class="fa fa-map-marker"></i>13 Pa Aze Ezo Street, Off Edeyan Street, By Masoje
-                            Junction, P.T.I Road, Effurun, Delta State.</span>
-                        <span><i class="fa fa-phone"></i> 0907 948 8546</span>
-                        <span><i class="fa fa-phone"></i> 0902 162 1815</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-widget-container section-padding">
-            <div class="row">
-                <div class="col-md-2 col-sm-3">
-                    <div class="single-footer-widget">
-                        <h4>Our School</h4>
-                        <ul class="footer-widget-list">
-                            <li><a href="index-2.html#">About Us</a></li>
-                            <li><a href="index-2.html#">Blog</a></li>
-                            <li><a href="index-2.html#">Contact</a></li>
-                            <li><a href="index-2.html#">Become a Teacher</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 hidden-sm">
-                    <div class="single-footer-widget">
-                        <h4>Links</h4>
-                        <ul class="footer-widget-list">
-                            <li><a href="index-2.html#">Courses</a></li>
-                            <li><a href="index-2.html#">Events</a></li>
-                            <li><a href="index-2.html#">Gallery</a></li>
-                            <li><a href="index-2.html#">FAQs</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-3">
-                    <div class="single-footer-widget">
-                        <h4>Support</h4>
-                        <ul class="footer-widget-list">
-                            <li><a href="index-2.html#">Documentation</a></li>
-                            <li><a href="index-2.html#">Forums</a></li>
-                            <li><a href="index-2.html#">Language Packs</a></li>
-                            <li><a href="index-2.html#">Release Status</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="subscribe-container">
-                        <p>Subscribe now and receive weekly newsletter with educational materials, new courses,
-                            interesting posts, popular books and much more!</p>
-                        <form action="#">
-                            <div class="subscribe-form">
-                                <input type="email" name="email" placeholder="Your email here">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="footer-container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span>&copy; 2016 <a href="index-2.html#">Power-Boosts</a>. All rights reserved</span>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="social-links">
-                                <a href="index-2.html#"><i class="fa fa-facebook"></i></a>
-                                <a href="index-2.html#"><i class="fa fa-google-plus"></i></a>
-                                <a href="index-2.html#"><i class="fa fa-twitter"></i></a>
-                                <a href="index-2.html#"><i class="fa fa-pinterest-p"></i></a>
-                                <a href="index-2.html#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="googleMap" style="width:100%;height:451px;">
+            <iframe style="width:100%;height:451px;"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.023750169032!2d5.797722405222476!3d5.563497536289211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1041add4f188f7b1%3A0x388038baf0aee797!2sTreasure%20Crest%20Integrated%20School!5e0!3m2!1sen!2sng!4v1578797234839!5m2!1sen!2sng"
+                frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
     </div>
 </div>
 
 
+<% include partials/public-footer %>
 
-<script src="js/vendor/jquery-1.12.3.min.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/bootstrap-toggle.min.js"></script>
-
-<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
-<script src="lib/nivo-slider/home.js" type="text/javascript"></script>
-
-<script src="js/wow.min.js"></script>
-
-<script src="js/jquery.meanmenu.js"></script>
-
-<script src="js/owl.carousel.min.js"></script>
-
-<script src="js/jquery.countdown.min.js"></script>
-
-<script src="js/jquery.scrollUp.min.js"></script>
-
-<script src="js/waypoints.min.js"></script>
-
-<script src="js/jquery.counterup.min.js"></script>
-
-<script src="js/slick.min.js"></script>
-
-<script src="js/jquery.mixitup.js"></script>
-
-<script src="js/venobox.min.js"></script>
-
-<script src="js/plugins.js"></script>
-
-<script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script>
-    function initialize() {
-        var mapOptions = {
-            zoom: 15,
-            scrollwheel: false,
-            center: new google.maps.LatLng(23.763494, 90.432226)
-        };
-
-        var map = new google.maps.Map(document.getElementById('googleMap'),
-            mapOptions);
-
-
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            animation: google.maps.Animation.BOUNCE,
-            icon: 'img/map-marker.png',
-            map: map
-        });
-
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-<script src="/js/main.js"></script>
 </body>
 
 </html>

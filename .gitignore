@@ -40,6 +40,9 @@ public/uploads/results/*
 # Ignore any .sql File
 *.sql
 
+# Ingnore todo file
+TODO
+
 
 # Ignore GIT ignore
 .gitingnore

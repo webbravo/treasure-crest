@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<% pageTitle = post.title %>
+
+
+<!-- Header -->
+<% include partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<%include partials/navbar-mobile %>
+
+<div class="breadcrumb-banner-area blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Blog</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blog-details-area section-padding blog-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-offset-1 col-md-10">
+                <div class="blog-post-wrapper">
+                    <div class="blog-post-details">
+                        <h1><%= post.title %></h1>
+                        <span><i class="fa fa-calendar"></i><%= post.date %> / By: <%= post.added_by %></span>
+                    </div>
+                    <div class="blog-post-details-img">
+                        <img src="<%= post.photo %>" alt="">
+                    </div>
+                    <div class="blog-post-details-text">
+                        <h4><%= post.title %></h4>
+                        <p>
+                            <%- post.content %>
+                        </p>
+                    </div>
+                    <div class="single-title">
+                        <h3>Related Posts</h3>
+                    </div>
+                    <div class="row">
+
+                        <% relatedPost.forEach(function(post, index, arr){  %>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="single-blog-item overlay-hover">
+                                <div class="single-blog-image">
+                                    <div class="overlay-effect">
+                                        <a href="/blog/post/<%= post.id %>">
+                                            <img src="<%= post.photo %>" alt="">
+                                            <span class="class-date"><%= post.date %></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="single-blog-text">
+                                    <h4><a href="/blog/post/<%= post.id %>"><%= post.title %></a></h4>
+                                    <div class="blog-date">
+                                        <span><i class="fa fa-calendar"></i><%= post.date %></span>
+                                    </div>
+                                    <p><%- post.content.substr(0, 50)+"..."; %></p>
+                                    <a href="/blog/post/<%= post.id %>">Read more.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <%});%>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/public-footer %>
+
+</body>
+
+</html>

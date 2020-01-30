@@ -78,6 +78,37 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item sidebar-nav-item">
+                <a href="#" class="nav-link">
+                    <i class="flaticon-open-book"></i>
+                    <span>Media</span>
+                </a>
+                <ul
+                    class="nav sub-group-menu  <%= (typeof isActive !== 'undefined'  && isActive === 'media' ) ? 'sub-group-active' : ''  %>">
+                    <li class="nav-item">
+                        <a href="/teachers/media/photos" class="nav-link">
+                            <i class="fas fa-image"></i>
+                            Photos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media/videos/add" class="nav-link">
+                            <i class="fas fa-video"></i>
+                            Videos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/teachers/media/blog" class="nav-link">
+                            <!-- <i class="fas fa-rss"></i> -->
+                            <i class="fas fa-blog"></i>
+                            Blog / News
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
             <% if (isAdmin == 2) { %>
 
             <li class="nav-item sidebar-nav-item">
@@ -109,43 +140,6 @@
                     <li class="nav-item">
                         <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
                             Grades</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item sidebar-nav-item">
-                <a href="#" class="nav-link"><i class="flaticon-open-book"></i><span>Media</span></a>
-                <ul class="nav sub-group-menu">
-
-                    <li class="nav-item">
-                        <a href="media/photos/add" class="nav-link"><i class="fas fa-plus"></i>Add
-                            photos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="media/photos/" class="nav-link"><i class="fas fa-list"></i>List
-                            Photos</a>
-                    </li>
-
-
-                    <hr style=" border-top: 1px solid #fff;">
-                    <li class="nav-item">
-                        <a href="media/videos/add" class="nav-link"><i class="fas fa-plus"></i>Add
-                            Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="media/videos/" class="nav-link"><i class="fas fa-list"></i>List
-                            Videos</a>
-                    </li>
-
-
-                    <hr style=" border-top: 1px solid #fff;">
-                    <li class="nav-item">
-                        <a href="media/blog-post/add" class="nav-link"><i class="fas fa-plus"></i>Add
-                            Post</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="media/blog-post/" class="nav-link"><i class="fas fa-list"></i>List
-                            Posts</a>
                     </li>
                 </ul>
             </li>

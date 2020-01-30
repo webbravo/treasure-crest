@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+
+<% pageTitle = "Student info on Parents Dashboard" %>
+
+
+<!-- Header -->
+<% include ../partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include ../partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<% include ../partials/navbar-mobile %>
+
+<div class="breadcrumb-banner-area teachers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Student</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/parents">Student List</a></li>
+                            <li>Student Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="teacher-details-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="teacher-details-image">
+                    <img src="<%= student.photo%>" alt="">
+                </div>
+                <div class="teacher-details-info">
+                    <h3><%= student.firstname + " " + " " + student.middlename + " " + student.lastname %></h3>
+                    <span>&nbsp;</span>
+                    <div class="teacher-info-text">
+                        <span><i class="fa fa-user"></i>PUPIL ID: <%= student.student_id %></span>
+                        <span><i class="fa fa-group"></i>CLASSNAME: <%= classroom.name %></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="class-details-tab">
+                    <div class="class-details-tab-menu">
+                        <ul role="tablist" class="nav nav-tabs">
+                            <li class="active" role="presentation">
+                                <a data-toggle="tab" role="tab" aria-controls="overview" href="#overview"
+                                    aria-expanded="true">
+                                    <i class="fa fa-graduation-cap"></i>
+                                    About Student
+                                </a></li>
+                            <li role="presentation" class="">
+                                <a data-toggle="tab" role="tab" aria-controls="schedule" href="#schedule"
+                                    aria-expanded="false">
+                                    <i class="fa fa-calendar"></i>
+                                    Student Result</a>
+                            </li>
+                            <li role="presentation" class=""><a data-toggle="tab" role="tab" aria-controls="schoolfees"
+                                    href="#schoolfees" aria-expanded="false"><i class="fa fa-credit-card"></i>Student
+                                    Fees</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="tab-content">
+                        <div id="overview" class="tab-pane active" role="tabpanel">
+                            <h3>LEARNING OUTCOMES</h3>
+                            <div class="teacher-info-text">
+                                <span>
+                                    <strong>Admission / Pupil ID:</strong> <%= student.student_id  %>
+                                </span>
+                                <span>
+                                    <strong>Class:</strong> <%= classroom.name  %>
+                                </span>
+                                <span>
+                                    <strong>Gender:</strong> <%= student.gender  %>
+                                </span>
+                                <span>
+                                    <strong>Date of birth:</strong> <%= student.dob  %>
+                                </span>
+                                <span>
+                                    <strong>Nationality:</strong> <%= student.nationality  %>
+                                </span>
+                                <span>
+                                    <strong>State of Origin:</strong> <%= student.state_origin  %>
+                                </span>
+
+                                <span>
+                                    <strong>LGA of Origin:</strong> <%= student.lga_origin  %>
+                                </span>
+
+                                <span>
+                                    <strong>Hometown:</strong> <%= student.hometown  %>
+                                </span>
+
+                                <span>
+                                    <strong>Religion:</strong> <%= student.religion  %>
+                                </span>
+
+                                <span>
+                                    <strong>Address:</strong> <%= student.address  %>
+                                </span>
+
+                                <span style="font-size: large;">
+                                    Admission Details
+                                </span>
+
+                                <span> <strong>Admission Term:</strong> <%= student.term  %></span>
+                                <span> <strong>Academic Session :</strong> <%= student.academic_session %> </span>
+                                <span> <strong>Admission Date : </strong> <%= student.admission_date %> </span>
+
+                            </div>
+
+
+                        </div>
+                        <div id="schedule" class="tab-pane" role="tabpanel">
+                            <h3>STUDENT TERMLY RESULT </h3>
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                                <div>Class</div>
+                                            </td>
+                                            <td>
+                                                <div>Session</div>
+                                            </td>
+                                            <td>
+                                                <div>Term</div>
+                                            </td>
+                                            <td>
+                                                <div>Date</div>
+                                            </td>
+
+                                            <td>
+                                                <div>Result</div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% results.forEach(function(result, index, arr){%>
+                                        <tr>
+                                            <td>
+                                                <div><%= result.classname %></div>
+                                            </td>
+                                            <td>
+                                                <div><%= result.session %></div>
+                                            </td>
+                                            <td>
+                                                <div><%= result.term %></div>
+                                            </td>
+                                            <td>
+                                                <div><%= result.date %></div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <a target="_blank" href="<%= result.result %>">
+                                                        <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <%}); %>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="schoolfees" class="tab-pane" role="tabpanel">
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>
+                                                <div>Class</div>
+                                            </td>
+                                            <td>
+                                                <div>Term</div>
+                                            </td>
+                                            <td>
+                                                <div>Date</div>
+                                            </td>
+                                            <td>
+                                                <div>Amount</div>
+                                            </td>
+                                            <td>
+                                                <div>Paid</div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- <tr>
+                                            <td>
+                                                <div>Basic 2</div>
+                                            </td>
+                                            <td>
+                                                <div>2nd Term</div>
+                                            </td>
+                                            <td>
+                                                <div>20 Jan 2019</div>
+                                            </td>
+                                            <td class="sub-title">
+                                                <div>N20,000</div>
+                                            </td>
+                                            <td><span class="icon">Paid</span> </td>
+                                        </tr> -->
+
+
+                                        <tr>
+                                            <h3>No School Fee Transactions currently</h3>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/public-footer %>
+
+</body>
+
+</html>

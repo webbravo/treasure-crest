@@ -9,6 +9,7 @@ const express = require("express");
 const indexRoute = require("./routes/index");
 const cookieParser = require("cookie-parser");
 const teacherRoute = require("./routes/teacherRoute");
+const parentRoute = require("./routes/parentRoute");
 const expressValidator = require("express-validator");
 const mysqlConnection = require("./models/connection");
 const flash = require("connect-flash");
@@ -100,10 +101,12 @@ app.use((req, res, next) => {
 // Route Handling App level Middleware
 app.use("/", indexRoute);
 app.use("/teachers", teacherRoute);
+app.use("/parents", parentRoute);
 
-// catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//     next(createError(404));
-// });
+//The 404 Route
+app.get('*', function (req, res) {
+  res.render('404');
+});
+
 
 module.exports = app;

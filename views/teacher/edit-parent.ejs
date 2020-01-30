@@ -4,9 +4,9 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
 
-    <!-- Preloader End Here -->
+    <% const isActive = "parent"; %>
+
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -26,16 +26,16 @@
                         <li>
                             <a href="/teachers">Home</a>
                         </li>
-                        <li>Add New Parents</li>
+                        <li>Edit Parents</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
-                <!-- Add New Parent Area Start Here -->
+                <!-- Edit Parent Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Add New Parents</h3>
+                                <h3>Edit Parents</h3>
                             </div>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -150,7 +150,7 @@
                         </form>
                     </div>
                 </div>
-                <!-- Add New Parent Area End Here -->
+                <!-- Edit Parent Area End Here -->
                 <% include ../partials/footer-tag %>
             </div>
         </div>
