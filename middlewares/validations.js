@@ -67,6 +67,15 @@ module.exports = {
     ],
 
 
+    loginParentValidation: [
+        check("email")
+        .trim()
+        .isEmail({
+            domain_specific_validation: true
+        })
+        .withMessage("Enter a valid email address")
+    ],
+
     addParentValidation: [
         check('firstname')
         .trim()
@@ -399,18 +408,23 @@ module.exports = {
 
     ],
 
-    sanitizeURLParams: [
-        sanitizeParam('id').escape().trim().toInt()
+    addPostValidation: [
+        check('title')
+        .trim()
+        .isLength({
+            min: 6
+        })
+        .withMessage("Title Must be at least 6 chars long"),
+
+        check("content")
+        .trim()
+        .isLength({
+            min: 20
+        }).withMessage("Content Must be longer than 20 chars ")
     ],
 
-    addArticleValidation: [
-        check('title').trim().isLength({
-            min: 5
-        }).withMessage('Title Must be at least 5 chars long'),
-        check("body").trim().isLength({
-            min: 10
-        }).withMessage('Body Must be at least 10 chars long')
-
+    sanitizeURLParams: [
+        sanitizeParam('id').escape().trim().toInt()
     ]
 
 }

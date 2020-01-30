@@ -1,0 +1,324 @@
+App 609452 output: Express running → PORT undefined
+App 609452 output: [ RowDataPacket { Database: 'information_schema' },
+App 609452 output:   RowDataPacket { Database: 'treafowp_db' } ]
+App 637730 output: Express running → PORT undefined
+App 637730 output: [ RowDataPacket { Database: 'information_schema' },
+App 637730 output:   RowDataPacket { Database: 'treafowp_db' } ]
+App 92958 output: Express running → PORT undefined
+App 92958 output: [ RowDataPacket { Database: 'information_schema' },
+App 92958 output:   RowDataPacket { Database: 'treafowp_db' } ]
+App 667405 output: Express running → PORT undefined
+App 794210 output: Express running → PORT undefined
+App 832300 output: Express running → PORT undefined
+App 415331 output: Express running → PORT undefined
+App 481188 output: Express running → PORT undefined
+App 481188 output: [ { value: 'Ij',
+App 481188 output:     msg: 'Last name too short! ',
+App 481188 output:     param: 'lastname',
+App 481188 output:     location: 'body' } ]
+App 481188 output: [ { value: 'Ke',
+App 481188 output:     msg: 'First name too short! ',
+App 481188 output:     param: 'firstname',
+App 481188 output:     location: 'body' } ]
+App 481188 output: [ '08062416692', '4natcom@gmail.com' ]
+App 64677 output: Express running → PORT undefined
+App 64677 output: [ { value: 'Q123456',
+App 64677 output:     msg: 'Password must contain at least 1 lowercase letter.',
+App 64677 output:     param: 'password',
+App 64677 output:     location: 'body' },
+App 64677 output:   { value: 'Q123456',
+App 64677 output:     msg: 'Password don\'t Match',
+App 64677 output:     param: 'password',
+App 64677 output:     location: 'body' } ]
+App 64677 output: [ '08033186570', 'treasurecrestschool@gmail.com' ]
+App 267055 output: Express running → PORT undefined
+App 312680 output: Express running → PORT undefined
+App 314155 output: Express running → PORT undefined
+App 339231 output: Express running → PORT undefined
+App 745165 output: Express running → PORT undefined
+App 418649 output: Express running → PORT undefined
+App 826641 output: Express running → PORT undefined
+App 752588 output: Express running → PORT undefined
+App 387530 output: Express running → PORT undefined
+App 920369 output: Express running → PORT undefined
+App 986382 output: Express running → PORT undefined
+App 175813 output: Express running → PORT undefined
+App 612662 output: Express running → PORT undefined
+App 208250 output: Express running → PORT undefined
+App 86915 output: Express running → PORT undefined
+App 23773 output: Express running → PORT undefined
+App 534706 output: Express running → PORT undefined
+App 367803 output: Express running → PORT undefined
+App 236239 output: Express running → PORT undefined
+App 369840 output: Express running → PORT undefined
+App 547276 output: Express running → PORT undefined
+App 556216 output: Express running → PORT undefined
+App 567404 output: Express running → PORT undefined
+App 923348 output: Express running → PORT undefined
+App 468380 output: Express running → PORT undefined
+App 347286 output: Express running → PORT undefined
+App 332368 output: Express running → PORT undefined
+App 344127 output: Express running → PORT undefined
+App 718668 output: Express running → PORT undefined
+App 1025331 output: Express running → PORT undefined
+App 12744 output: Express running → PORT undefined
+App 62689 output: Express running → PORT undefined
+App 90874 output: Express running → PORT undefined
+App 6060 output: Express running → PORT undefined
+App 852424 output: Express running → PORT undefined
+App 497453 output: Express running → PORT undefined
+App 490231 output: Express running → PORT undefined
+App 169951 output: Express running → PORT undefined
+App 371818 output: Express running → PORT undefined
+App 738138 output: Express running → PORT undefined
+App 752334 output: Express running → PORT undefined
+App 883794 output: Express running → PORT undefined
+App 599586 output: Express running → PORT undefined
+App 912712 output: Express running → PORT undefined
+App 736771 output: Express running → PORT undefined
+App 14315 output: Express running → PORT undefined
+App 740223 output: Express running → PORT undefined
+App 303308 output: Express running → PORT undefined
+App 1043821 output: Express running → PORT undefined
+App 253629 output: Express running → PORT undefined
+App 819204 output: Express running → PORT undefined
+App 286466 output: Express running → PORT undefined
+App 928770 output: Express running → PORT undefined
+App 594707 output: Express running → PORT undefined
+App 474162 output: Express running → PORT undefined
+App 63696 output: Express running → PORT undefined
+App 620467 output: Express running → PORT undefined
+App 364248 output: Express running → PORT undefined
+App 976652 output: Express running → PORT undefined
+App 575586 output: Express running → PORT undefined
+App 312933 output: Express running → PORT undefined
+App 732033 output: Express running → PORT undefined
+App 715090 output: Express running → PORT undefined
+App 203123 output: Express running → PORT undefined
+App 614116 output: Express running → PORT undefined
+App 974620 output: Express running → PORT undefined
+App 1005855 output: Express running → PORT undefined
+App 1043966 output: Express running → PORT undefined
+App 22596 output: Express running → PORT undefined
+App 915006 output: Express running → PORT undefined
+App 974431 output: Express running → PORT undefined
+App 789821 output: Express running → PORT undefined
+App 994162 output: Express running → PORT undefined
+App 214570 output: Express running → PORT undefined
+App 1011115 output: Express running → PORT undefined
+App 748136 output: Express running → PORT undefined
+App 393721 output: Express running → PORT undefined
+App 118428 output: Express running → PORT undefined
+App 941515 output: Express running → PORT undefined
+App 933882 output: Express running → PORT undefined
+App 42562 output: Express running → PORT undefined
+App 802921 output: Express running → PORT undefined
+App 531433 output: Express running → PORT undefined
+App 786360 output: Express running → PORT undefined
+App 801563 output: Express running → PORT undefined
+App 736744 output: Express running → PORT undefined
+App 839521 output: Express running → PORT undefined
+App 622996 output: Express running → PORT undefined
+App 648290 output: Express running → PORT undefined
+App 736958 output: Express running → PORT undefined
+App 335116 output: Express running → PORT undefined
+App 946462 output: Express running → PORT undefined
+App 344128 output: Express running → PORT undefined
+App 56880 output: Express running → PORT undefined
+App 923190 output: Express running → PORT undefined
+App 345711 output: Express running → PORT undefined
+App 656017 output: Express running → PORT undefined
+App 931652 output: Express running → PORT undefined
+App 443278 output: Express running → PORT undefined
+App 127060 output: Express running → PORT undefined
+App 140556 output: Express running → PORT undefined
+App 953534 output: Express running → PORT undefined
+App 130654 output: Express running → PORT undefined
+App 322237 output: Express running → PORT undefined
+App 10667 output: Express running → PORT undefined
+App 481561 output: Express running → PORT undefined
+App 961056 output: Express running → PORT undefined
+App 715285 output: Express running → PORT undefined
+App 48708 output: Express running → PORT undefined
+App 347612 output: Express running → PORT undefined
+App 635540 output: Express running → PORT undefined
+App 1018342 output: Express running → PORT undefined
+App 700579 output: Express running → PORT undefined
+App 5879 output: Express running → PORT undefined
+App 800842 output: Express running → PORT undefined
+App 535559 output: Express running → PORT undefined
+App 723644 output: Express running → PORT undefined
+App 804227 output: Express running → PORT undefined
+App 935714 output: Express running → PORT undefined
+App 386772 output: Express running → PORT undefined
+App 856076 output: Express running → PORT undefined
+App 787040 output: Express running → PORT undefined
+App 434263 output: Express running → PORT undefined
+App 264904 output: Express running → PORT undefined
+App 681037 output: Express running → PORT undefined
+App 55603 output: Express running → PORT undefined
+App 674815 output: Express running → PORT undefined
+App 838127 output: Express running → PORT undefined
+App 56142 output: Express running → PORT undefined
+App 815871 output: Express running → PORT undefined
+App 247415 output: Express running → PORT undefined
+App 186307 output: Express running → PORT undefined
+App 462525 output: Express running → PORT undefined
+App 345169 output: Express running → PORT undefined
+App 805908 output: Express running → PORT undefined
+App 381330 output: Express running → PORT undefined
+App 573403 output: Express running → PORT undefined
+App 154313 output: Express running → PORT undefined
+App 921583 output: Express running → PORT undefined
+App 871446 output: Express running → PORT undefined
+App 949561 output: Express running → PORT undefined
+App 966613 output: Express running → PORT undefined
+App 124704 output: Express running → PORT undefined
+App 401826 output: Express running → PORT undefined
+App 474088 output: Express running → PORT undefined
+App 696188 output: Express running → PORT undefined
+App 949680 output: Express running → PORT undefined
+App 1022454 output: Express running → PORT undefined
+App 250260 output: Express running → PORT undefined
+App 528472 output: Express running → PORT undefined
+App 637918 output: Express running → PORT undefined
+App 735395 output: Express running → PORT undefined
+App 777908 output: Express running → PORT undefined
+App 896151 output: Express running → PORT undefined
+App 1013271 output: Express running → PORT undefined
+App 123930 output: Express running → PORT undefined
+App 420581 output: Express running → PORT undefined
+App 843052 output: Express running → PORT undefined
+App 230973 output: Express running → PORT undefined
+App 552853 output: Express running → PORT undefined
+App 696966 output: Express running → PORT undefined
+App 852766 output: Express running → PORT undefined
+App 1002872 output: Express running → PORT undefined
+App 45478 output: Express running → PORT undefined
+App 258383 output: Express running → PORT undefined
+App 633612 output: Express running → PORT undefined
+App 7596 output: Express running → PORT undefined
+App 161216 output: Express running → PORT undefined
+App 113493 output: Express running → PORT undefined
+App 168273 output: Express running → PORT undefined
+App 432200 output: Express running → PORT undefined
+App 544043 output: Express running → PORT undefined
+App 941353 output: Express running → PORT undefined
+App 994369 output: Express running → PORT undefined
+App 763119 output: Express running → PORT undefined
+App 315540 output: Express running → PORT undefined
+App 750676 output: Express running → PORT undefined
+App 1035830 output: Express running → PORT undefined
+App 374928 output: Express running → PORT undefined
+App 579394 output: Express running → PORT undefined
+App 45587 output: Express running → PORT undefined
+App 138670 output: Express running → PORT undefined
+App 346511 output: Express running → PORT undefined
+App 1015623 output: Express running → PORT undefined
+App 733124 output: Express running → PORT undefined
+App 254173 output: Express running → PORT undefined
+App 959678 output: Express running → PORT undefined
+App 748094 output: Express running → PORT undefined
+App 139378 output: Express running → PORT undefined
+App 792869 output: Express running → PORT undefined
+App 541388 output: Express running → PORT undefined
+App 772992 output: Express running → PORT undefined
+App 6600 output: Express running → PORT undefined
+App 743686 output: Express running → PORT undefined
+App 166572 output: Express running → PORT undefined
+App 351793 output: Express running → PORT undefined
+App 625655 output: Express running → PORT undefined
+App 1045254 output: Express running → PORT undefined
+App 3079 output: Express running → PORT undefined
+App 115685 output: Express running → PORT undefined
+App 346942 output: Express running → PORT undefined
+App 678725 output: Express running → PORT undefined
+App 880733 output: Express running → PORT undefined
+App 15145 output: Express running → PORT undefined
+App 884365 output: Express running → PORT undefined
+App 580006 output: Express running → PORT undefined
+App 940563 output: Express running → PORT undefined
+App 91324 output: Express running → PORT undefined
+App 112459 output: Express running → PORT undefined
+App 146061 output: Express running → PORT undefined
+App 642282 output: Express running → PORT undefined
+App 716962 output: Express running → PORT undefined
+App 128559 output: Express running → PORT undefined
+App 389843 output: Express running → PORT undefined
+App 406129 output: Express running → PORT undefined
+App 439143 output: Express running → PORT undefined
+App 579730 output: Express running → PORT undefined
+App 873455 output: Express running → PORT undefined
+App 901389 output: Express running → PORT undefined
+App 161022 output: Express running → PORT undefined
+App 426742 output: Express running → PORT undefined
+App 530298 output: Express running → PORT undefined
+App 145046 output: Express running → PORT undefined
+App 814287 output: Express running → PORT undefined
+App 372779 output: Express running → PORT undefined
+App 434700 output: Express running → PORT undefined
+App 362661 output: Express running → PORT undefined
+App 584609 output: Express running → PORT undefined
+App 917760 output: Express running → PORT undefined
+App 33033 output: Express running → PORT undefined
+App 520257 output: Express running → PORT undefined
+App 577024 output: Express running → PORT undefined
+App 821167 output: Express running → PORT undefined
+App 797060 output: Express running → PORT undefined
+App 851392 output: Express running → PORT undefined
+App 554667 output: Express running → PORT undefined
+App 783935 output: Express running → PORT undefined
+App 962517 output: Express running → PORT undefined
+App 118243 output: Express running → PORT undefined
+App 731574 output: Express running → PORT undefined
+App 855620 output: Express running → PORT undefined
+App 72881 output: Express running → PORT undefined
+App 944342 output: Express running → PORT undefined
+App 633290 output: Express running → PORT undefined
+App 684863 output: Express running → PORT undefined
+App 743841 output: Express running → PORT undefined
+App 121605 output: Express running → PORT undefined
+App 391293 output: Express running → PORT undefined
+App 174533 output: Express running → PORT undefined
+App 302660 output: Express running → PORT undefined
+App 340321 output: Express running → PORT undefined
+App 452967 output: Express running → PORT undefined
+App 470508 output: Express running → PORT undefined
+App 511541 output: Express running → PORT undefined
+App 571879 output: Express running → PORT undefined
+App 692969 output: Express running → PORT undefined
+App 778748 output: Express running → PORT undefined
+App 310800 output: Express running → PORT undefined
+App 813785 output: Express running → PORT undefined
+App 878888 output: Express running → PORT undefined
+App 482804 output: Express running → PORT undefined
+App 164843 output: /home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/route.js:202
+App 164843 output:         throw new Error(msg);
+App 164843 output:         ^
+App 164843 output: 
+App 164843 output: Error: Route.get() requires a callback function but got a [object Undefined]
+App 164843 output:     at Route.(anonymous function) [as get] (/home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/route.js:202:15)
+App 164843 output:     at Function.proto.(anonymous function) [as get] (/home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/index.js:510:19)
+App 164843 output:     at Object.<anonymous> (/home/treafowp/treasure-crest-app/routes/teacherRoute.js:189:8)
+App 164843 output:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+App 164843 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 164843 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 164843 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 164843 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 164843 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 164843 output:     at Module.require (/opt/passenger-5.3.7-5.el6.cloudlinux/src/helper-scripts/node-loader.js:80:25)
+App 165076 output: /home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/route.js:202
+App 165076 output:         throw new Error(msg);
+App 165076 output:         ^
+App 165076 output: 
+App 165076 output: Error: Route.get() requires a callback function but got a [object Undefined]
+App 165076 output:     at Route.(anonymous function) [as get] (/home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/route.js:202:15)
+App 165076 output:     at Function.proto.(anonymous function) [as get] (/home/treafowp/nodevenv/treasure-crest-app/10/lib/node_modules/express/lib/router/index.js:510:19)
+App 165076 output:     at Object.<anonymous> (/home/treafowp/treasure-crest-app/routes/teacherRoute.js:189:8)
+App 165076 output:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+App 165076 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 165076 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 165076 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 165076 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 165076 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 165076 output:     at Module.require (/opt/passenger-5.3.7-5.el6.cloudlinux/src/helper-scripts/node-loader.js:80:25)

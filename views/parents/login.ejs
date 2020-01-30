@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<% pageTitle = "Parent Login" %>
+
+
+<!-- Header -->
+<% include ../partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include ../partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<% include ../partials/navbar-mobile %>
+
+
+<div class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3">
+
+                <div class="contact-form">
+                    <div class="single-title">
+                        <h3>Parent Login</h3>
+                    </div>
+                    <% include ../partials/message %>
+                    <div class="contact-form-container">
+                        <form action="login" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Enter email *" autocomplete="off">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="password" name="password" placeholder="Enter password *"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button-default button-yellow"><i
+                                    class="fa fa-send"></i>Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/public-footer %>
+
+</body>
+
+</html>

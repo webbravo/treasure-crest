@@ -11,14 +11,15 @@ module.exports.isTeacher = (req, res, next) => {
 };
 
 // Student
-module.exports.isStudent = (req, res, next) => {
-    if (req.session.studentID) {
-        //console.log(req.session.studentID);
-        next();
-    } else {
-        res.redirect('../students/login');
+module.exports.isParent = (req, res, next) => {
+    if (!req.session.parentID) {
+        req.session.returnTo = req.originalUrl || '/';
+        req.flash('warning', "Please Login");
+        return res.redirect('/parents/login');
     }
+    next();
 };
+
 
 
 // This Middleware checks for authorizaion
@@ -48,8 +49,24 @@ module.exports.logout = (req, res, next) => {
         // Redirect to login
         if (this.isTeacher) {
             return res.redirect("../teachers/login");
-        } else {
-            return res.redirect("../students/login");
+        }
+    });
+}
+
+
+
+module.exports.parentLogout = (req, res, next) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error(err);
+        }
+
+        // Clear cookies
+        res.clearCookie(SESSION_SECRET);
+
+        // Redirect to login
+        if (this.isParent) {
+            return res.redirect("../parents/login");
         }
     });
 }

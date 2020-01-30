@@ -4,6 +4,8 @@ const parentsController = require("../controllers/parentsController");
 const studentController = require("../controllers/studentController");
 const resultController = require("../controllers/resultController");
 const classroomController = require("../controllers/classController");
+const photosController = require("../controllers/photosController");
+const blogController = require("../controllers/blogController");
 const auth = require("../middlewares/authMiddleware");
 const validator = require("../middlewares/validations");
 
@@ -94,14 +96,20 @@ router.get(
 
 /**==================ALL THE STUDENT RELATED ROUTES====================**/
 
-
-
 /**==================ALL RESULT RELATED ROUTES====================**/
 // Show result sheet
-router.get("/result-sheet/:studentId", auth.isTeacher, resultController.resultSheet);
+router.get(
+    "/result-sheet/:studentId",
+    auth.isTeacher,
+    resultController.resultSheet
+);
 
 // Add  result
-router.get("/add-result/:studentId", auth.isTeacher, resultController.resultSheet);
+router.get(
+    "/add-result/:studentId",
+    auth.isTeacher,
+    resultController.resultSheet
+);
 router.post(
     "/add-result/:studentId",
     auth.isTeacher,
@@ -110,15 +118,26 @@ router.post(
 );
 
 // Edit Result
-router.get("/result-sheet/:studentId/edit/:resultId", auth.isTeacher, resultController.editForm);
-router.post("/result-sheet/:studentId/edit/:resultId", auth.isTeacher, resultController.upload, resultController.update);
+router.get(
+    "/result-sheet/:studentId/edit/:resultId",
+    auth.isTeacher,
+    resultController.editForm
+);
+router.post(
+    "/result-sheet/:studentId/edit/:resultId",
+    auth.isTeacher,
+    resultController.upload,
+    resultController.update
+);
 
 // Delete Result
-router.get("/result-sheet/:studentId/delete/:resultId", auth.isTeacher, resultController.deleteResult)
+router.get(
+    "/result-sheet/:studentId/delete/:resultId",
+    auth.isTeacher,
+    resultController.deleteResult
+);
 
 /**==================ALL RESULT RELATED ROUTES====================**/
-
-
 
 /**==================ALL PARENT RELATED ROUTES====================**/
 
@@ -209,5 +228,40 @@ router.post(
     validator.addClassroomValidation,
     classroomController.update
 );
+/**==================END: ALL CLASS RELATED ROUTES====================**/
+
+/**==================START: MEDIA ROUTES====================**/
+router.get("/media/photos", auth.isTeacher, photosController.showPhotos);
+router.post("/media/photos/add", auth.isTeacher, photosController.upload, photosController.resize, photosController.addPhotos);
+router.get("/media/photos/delete/:id", auth.isTeacher, photosController.delete);
+
+
+router.get("/media/blog/", auth.isTeacher, blogController.getAll);
+router.get("/media/blog/add", auth.isTeacher, blogController.showAddForm);
+router.post(
+    "/media/blog/add",
+    auth.isTeacher,
+    blogController.upload,
+    blogController.resize,
+    validator.addPostValidation,
+    blogController.add
+);
+
+
+router.get("/media/blog/:id/edit", auth.isTeacher, validator.sanitizeURLParams, blogController.getPostById);
+router.post("/media/blog/:id/edit",
+    auth.isTeacher,
+    blogController.upload,
+    blogController.resize,
+    validator.sanitizeURLParams,
+    validator.addPostValidation,
+    blogController.updatePost
+);
+
+
+router.get("/media/blog/:id/delete", auth.isTeacher, validator.sanitizeURLParams, blogController.delete);
+
+
+/**==================END: MEDIA ROUTES====================**/
 
 module.exports = router;

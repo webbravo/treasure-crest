@@ -1,4 +1,5 @@
 const Student = require("../models/Students");
+const Classroom = require("../models/Classroom");
 const classController = require("../controllers/classController");
 const parentController = require("../controllers/parentsController");
 const resultController = require("../controllers/resultController");
@@ -145,7 +146,6 @@ module.exports.listAll = async (req, res) => {
             pageTitle: "All Student List | Treasure Crest Integrated School",
             students: foundStudents
         });
-
     });
 };
 
@@ -165,7 +165,7 @@ module.exports.viewStudent = async (req, res, next) => {
         const parent_1 = await parentController.getParentById(params.parent_1);
 
         // Get the classroom the child belongs to
-        const classroom = await classController.getClassById(params.class_id);
+        const classroom = await await Classroom.findById(params.class_id);
 
         // Get the Second Parent (optional)
         let parent_2;

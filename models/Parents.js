@@ -31,13 +31,8 @@ module.exports.getAllParentsID = async () => {
 };
 
 module.exports.findByEmail = async function (email) {
-    let results = [];
-    const rows = await mysqlConnection.query('SELECT id, firstname, lastname, password, is_admin FROM Parents WHERE email = ?', email);
-    // do something with result
-    Object.keys(rows).forEach(function (key) {
-        results = rows[key];
-    });
-    return results;
+    const rows = await mysqlConnection.query('SELECT id, firstname, lastname, password FROM Parents WHERE email = ? LIMIT 1', email);
+    return rows[0];
 }
 
 

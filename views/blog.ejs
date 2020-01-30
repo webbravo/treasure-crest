@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<% pageTitle = "School news - Information center" %>
+
+<!-- Header -->
+<% include partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<%include partials/navbar-mobile %>
+
+
+<div class="breadcrumb-banner-area blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Blog</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blog-fullwidth-area section-padding blog-two">
+    <div class="container">
+        <div class="row">
+            <% posts.forEach(function (post, index, arr){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="single-blog-item overlay-hover">
+                    <div class="single-blog-image">
+                        <div class="overlay-effect">
+                            <a href="/blog/post/<%= post.id %>">
+                                <img src="<%= post.photo %>" alt="">
+                                <span class="class-date">Dec 21 <span>2015</span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="single-blog-text">
+                        <h4><a href="/blog/post/<%= post.id %>"><%= post.title %></a></h4>
+                        <div class="blog-date">
+                            <span><i class="fa fa-calendar"></i><%= post.date %></span>
+                        </div>
+                        <p><%= striptags(post.content.substr(0, 100))+"..."; %></p>
+                        <a href="/blog/post/<%= post.id %>">Read more.</a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pagination-content">
+                    <div class="pagination-button">
+                        <ul class="pagination">
+                            <li class="current"><a href="/blog">1</a></li>
+                            <li><a href="/blog">2</a></li>
+                            <li><a href="/blog">3</a></li>
+                            <li><a href="/blog">4</a></li>
+                            <li><a href="/blog"><i class="fa fa-caret-right"></i></a></li>
+                        </ul>
+                        <span>Page:</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/public-footer %>
+
+</body>
+
+</html>

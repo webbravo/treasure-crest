@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+    <% const isActive = "media"; %>
+
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <% include ../partials/sidebar %>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+
+
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Photo Gallery</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li> Photo Gallery</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+
+                <!--  Add Photo Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Photo Gallery </h3>
+                            </div>
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+
+
+                        <div class="table-responsive ">
+                            <table class="table display data-table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% photos.forEach(function (photo, index, arr){ %>
+                                    <tr>
+
+                                        <td class="text-center">
+                                            <img style="max-width: 100px;" src="<%= photo.photo %>" alt="photo Gallery">
+                                        </td>
+                                        <td><%= photo.date %></td>
+
+                                        <td>
+                                            <div class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <span class="flaticon-more-button-of-three-dots"></span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                        href="/teachers/media/photos/delete/<%= photo.id%>/"><i
+                                                            class="fas fa-trash text-orange-red"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <button type="button" type="button" data-toggle="modal" data-target="#sign-up"
+                            class="modal-trigger btn-fill-lg bg-blue-dark btn-hover-yellow">
+                            Add Photo
+                            <i class="fas fa-plus"></i>
+                        </button>
+
+
+                        <!-- Add Photo Modal -->
+                        <div class="modal sign-up-modal fade" id="sign-up" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="close-btn">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <form id="" enctype="multipart/form-data" method="POST" action="photos/add"
+                                            class="new-added-form">
+                                            <div class="row">
+
+                                                <div class="col-12 form-group mg-t-10">
+                                                    <label class="text-dark-medium">Uplaod a Photo
+                                                        *</label>
+                                                    <input id="photo" name="photo" type="file" class="form-control-file"
+                                                        accept="image/png, image/jpg" required>
+                                                </div>
+
+                                                <div class=" col-12 form-group mg-t-8">
+                                                    <button type="submit"
+                                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Upload</button>
+
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Photo Modal -->
+
+                    </div>
+                </div>
+                <!-- Add Photo Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>

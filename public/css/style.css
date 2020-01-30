@@ -149,8 +149,8 @@ ul {
 body {
     color: #666;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 28px;
     text-align: left;
     font-weight: 300
 }
@@ -4436,6 +4436,7 @@ span.schedule-time {
 
 .experience-skill-wrapper {
     margin-top: 7px;
+    font-size: 13px;
 }
 
 .experience-skill-wrapper .skill-bars .skill-bar-item {

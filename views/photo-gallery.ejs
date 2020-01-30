@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<% pageTitle = "Photo gallery" %>
+
+
+<!-- Header -->
+<% include partials/public-header %>
+
+<!-- Navbar for Desktop -->
+<% include partials/navbar %>
+
+<!-- Navbar for Mobile -->
+<% include partials/navbar-mobile %>
+
+
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Gallery</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Photo gallery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+
+
+<!--Gallery Area Start-->
+<div class="gallery-area section-padding gallery-full-width">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="filter-menu">
+                </div>
+            </div>
+        </div>
+        <div class="filter-items">
+            <div class="row">
+                <% photos.forEach(function (photo, index, arr){ %>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mix single-items drawing overlay-hover">
+                    <div class="overlay-effect">
+                        <a href="<%= photo.photo %>" data-toggle="lightbox">
+                            <img class="img-fluid" src="<%= photo.photo %>" alt="">
+                        </a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+            <div class="col-md-12">
+                <div class="button text-center">
+                    <a class="button-default button-yellow" href="#"><i class="fa fa-refresh"></i>Load More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Gallery Area-->
+
+
+
+
+
+<% include partials/public-footer %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+    integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"
+    integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
+
+<script type="text/javascript">
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox({
+            alwaysShowClose: true,
+            showArrows: true
+        });
+    });
+</script>
+
+</body>
+
+</html>

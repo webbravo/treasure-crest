@@ -75,6 +75,14 @@ module.exports.getStudentById = async studentId => {
     return foundStudent[0];
 };
 
+
+
+
+module.exports.getStudentByParentId = async parentId => {
+    const foundStudents = await mysqlConnection.query(`SELECT * FROM Students WHERE status = 1 AND parent_1 = ${parentId} OR parent_2 = ${parentId}`);
+    return foundStudents;
+};
+
 module.exports.updateStatus = async (status, studentId) => {
     try {
         await mysqlConnection.query(`UPDATE Students SET status = ? WHERE id = ?`, [
@@ -86,3 +94,32 @@ module.exports.updateStatus = async (status, studentId) => {
         console.error(error);
     }
 };
+
+
+
+// module.exports.getStudentFullDetails = async studentId => {
+//     try {
+//         const sql = `SELECT
+//                     Students.*,
+//                     Class.id AS class_id,
+//                     Class.name AS classname,
+//                     CONCAT(Parents.firstname, ' ', Parents.lastname) as parentName,
+//                     Parents.phone AS parentPhone,
+//                     Students.parent_1 as parent_1,
+//                     Students.parent_2 as parent_2,
+//                     FROM
+//                     Students
+//                     INNER JOIN Class ON Students.class_id = Class.id
+//                     INNER JOIN Parents ON Students.parent_1 = Parents.id
+//                     INNER JOIN Results ON Students.id = Results.student_id
+//                     WHERE
+
+//                     Students.id = ${studentId}
+//                     `;
+
+//         const foundStudents = await mysqlConnection.query(sql);
+//         return foundStudents[0];
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };

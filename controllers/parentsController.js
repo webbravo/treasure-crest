@@ -2,6 +2,7 @@ const {
     validationResult,
 } = require('express-validator');
 const Parents = require('../models/Parents');
+const Students = require('../models/Students');
 const bcrypt = require("bcryptjs");
 
 
@@ -27,7 +28,12 @@ module.exports.getAllParentsID = async (req, res) => {
 module.exports.getParentById = async (id) => {
     const foundParent = await Parents.findById(id);
     return foundParent;
-}
+};
+
+
+// module.exports.getStudentByParentId = async (parentsId) => {
+//     const foundStudent = await Students.
+// }
 
 
 // Show the add parent form

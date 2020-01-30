@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<% include ../partials/head-tag %>
+
+<body>
+
+    <% const isActive = "media"; %>
+
+    <div id="wrapper" class="wrapper bg-ash">
+
+        <!-- Header Menu Area Start Here -->
+        <% include ../partials/header %>
+        <!-- Header Menu Area End Here -->
+
+        <!-- Page Area Start Here -->
+        <div class="dashboard-page-one">
+            <!-- Sidebar Area Start Here -->
+            <% include ../partials/sidebar %>
+            <!-- Sidebar Area End Here -->
+            <div class="dashboard-content-one">
+                <!-- Breadcubs Area Start Here -->
+                <div class="breadcrumbs-area">
+                    <h3>Blog Post</h3>
+                    <ul>
+                        <li>
+                            <a href="/teachers">Home</a>
+                        </li>
+                        <li>Edit Blog Post</li>
+                    </ul>
+                </div>
+                <!-- Breadcubs Area End Here -->
+                <!-- Edit Blog Post Area Start Here -->
+                <div class="card height-auto">
+                    <div class="card-body">
+                        <div class="heading-layout1">
+                            <div class="item-title">
+                                <h3>Edit Blog Post</h3>
+                            </div>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">...</a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-times text-orange-red"></i>Close</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dismiss-alart">
+                            <% include ../partials/message %>
+                        </div>
+                        <br>
+                        <form enctype="multipart/form-data" method="POST" action="edit" class="new-added-form">
+                            <div class="row">
+                                <div class="col-xl-9 col-lg-9 col-12 form-group">
+                                    <label>Post Title *</label>
+                                    <input type="text" name="title" placeholder="Enter a Post Title"
+                                        class="form-control" required
+                                        value="<%= (typeof formData !== 'undefined'  && formData.title ) ? formData.title : ''  %>">
+                                </div>
+
+
+                                <div class=" col-12 form-group mg-t-30">
+
+                                    <div style="max-width: 200px;" class="item-img">
+                                        <img src="<%= formData.photo %>" alt="student">
+                                    </div>
+
+                                    <label>Post cover photo * </label>
+
+                                    <input id="photo" name="photo" type="file" class="form-control-file"
+                                        accept="image/png, image/jpg">
+                                </div>
+
+                                <div class="col-lg-9 col-12 form-group mg-t-20">
+                                    <label>Full Post Content</label>
+                                    <textarea id="form-message" class="textarea form-control" name="content" cols="20"
+                                        rows="20"><%= (typeof formData !== 'undefined'  && formData.content ) ? formData.content : ''  %></textarea>
+                                </div>
+
+                                <script>
+                                    tinymce.init({
+                                        selector: 'textarea',
+                                        toolbar_drawer: 'floating',
+                                    });
+                                </script>
+
+                                <div class="col-12 form-group mg-t-8">
+                                    <button type="submit"
+                                        class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                                    <button type="reset"
+                                        class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Edit Blog Parent Area End Here -->
+                <% include ../partials/footer-tag %>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </div>
+    <!-- jquery-->
+    <% include ../partials/js-files %>
+
+</body>
+
+</html>
