@@ -4,9 +4,10 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
 
-    <!-- Preloader End Here -->
+    <% const isActive = "class"; %>
+
+
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -21,21 +22,21 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Students</h3>
+                    <h3>classroom</h3>
                     <ul>
                         <li>
                             <a href="/teachers">Home</a>
                         </li>
-                        <li>Student Details</li>
+                        <li>Class Details</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
-                <!-- Student Details Area Start Here -->
+                <!-- Classroom Details Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>About <%= classroom.name; %> classroom</h3>
+                                <h3> <%= classroom.name; %> classroom</h3>
                             </div>
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -46,7 +47,7 @@
                         </div>
                         <div class="single-info-details">
                             <div class="item-img">
-                                <img src="<%= classroom.photo %>" alt="student">
+                                <img src="<%= classroom.photo %>" alt="Classroom Photo">
                             </div>
                             <div class="item-content">
                                 <div class="header-inline item-header">
@@ -56,8 +57,6 @@
                                         <ul>
                                             <li><a href="/teachers/edit-class/<%= classroom.id %>"><i
                                                         class="far fa-edit"></i></a></li>
-                                            <!-- <li><a href="#"><i class="fas fa-print"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-download"></i></a></li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -81,7 +80,8 @@
 
                                             <tr>
                                                 <td>Description:</td>
-                                                <td class="font-medium text-dark-medium"> <%= classroom.description %>
+                                                <td style="max-width: 400px;" class="font-medium text-dark-medium">
+                                                    <%= classroom.description %>
                                                 </td>
                                             </tr>
 
@@ -93,7 +93,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Student Details Area End Here -->
+                <!-- CLASS
+                     Details Area End Here -->
                 <% include ../partials/footer-tag %>
             </div>
         </div>

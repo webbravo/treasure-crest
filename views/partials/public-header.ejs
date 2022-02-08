@@ -16,8 +16,7 @@
     <meta name="description" content="At Treasure Crest Integrated School
         we also teach your children about the basic values of human beings such as
          honesty, kindness, generosity, courage, freedom, equality and respect.
-         Learn to celebrate diversity in a spirit of understanding and
-         tolerance and develop a positive regard and awareness of other people">
+         ">
 
     <meta name="keywords" content="Treasure Crest, Treasure Crest Integrated School, Schools, Warri School, ">
 
@@ -26,9 +25,7 @@
     <meta property="og:image" content="https://treasurecrestintegrated.com/img/banner/7.jpg" />
     <meta property="og:description" content="At Treasure Crest Integrated School
     we also teach your children about the basic values of human beings such as
-     honesty, kindness, generosity, courage, freedom, equality and respect.
-     Learn to celebrate diversity in a spirit of understanding and
-     tolerance and develop a positive regard and awareness of other people" />
+     honesty, kindness, generosity, courage, freedom, equality and respect." />
 
     <link rel="stylesheet" href="/css/import.css">
 
@@ -46,10 +43,9 @@
                         <div class="header-top-info">
                             <span>Open hours: 7:00am - 5:00pm Mon-Fri</span>
                             <div class="social-links">
-                                <a href="/#"><i class="fa fa-facebook"></i></a>
-                                <a href="/#"><i class="fa fa-google-plus"></i></a>
-                                <a href="/#"><i class="fa fa-twitter"></i></a>
-                                <a href="/#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/treasure.crest.9"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/treasurecrestintegrated/"><i
+                                        class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -57,12 +53,15 @@
                         <div class="header-login-register">
                             <ul class="login">
                                 <li>
+                                    <% if (typeof parentID !== 'undefined' && parentID) { %>
+                                    <a href="/parents/logout"><i class="fa fa-key"></i>Logout</a>
+                                    <% }else{  %>
                                     <a href="/#"><i class="fa fa-key"></i>Login</a>
-                                    <!-- < -->
                                     <div class="login-form">
                                         <a href="/parents/login"><i class="fa fa-key"></i>Parents Login</a>
                                         <a href="/teachers"><i class="fa fa-user"></i>Teachers Login</a>
                                     </div>
+                                    <% } %>
                                 </li>
                             </ul>
                         </div>

@@ -228,6 +228,14 @@ router.post(
     validator.addClassroomValidation,
     classroomController.update
 );
+
+// Delete a classroom
+router.get(
+    "/delete-class/:id",
+    auth.isTeacher,
+    validator.sanitizeURLParams,
+    classroomController.delete
+);
 /**==================END: ALL CLASS RELATED ROUTES====================**/
 
 /**==================START: MEDIA ROUTES====================**/

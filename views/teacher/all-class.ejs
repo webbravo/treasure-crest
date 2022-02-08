@@ -8,9 +8,9 @@
 <% include ../partials/head-tag %>
 
 <body>
-    <!-- Preloader Start Here -->
 
-    <!-- Preloader End Here -->
+    <% const isActive = "class"; %>
+
     <div id="wrapper" class="wrapper bg-ash">
 
         <!-- Header Menu Area Start Here -->
@@ -55,22 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form class="mg-b-20">
-                            <div class="row gutters-8">
-                                <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                                    <input type="text" placeholder="Search by ID ..." class="form-control">
-                                </div>
-                                <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
-                                    <input type="text" placeholder="Search by Name ..." class="form-control">
-                                </div>
-                                <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
-                                    <input type="text" placeholder="Search by Phone ..." class="form-control">
-                                </div>
-                                <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
-                                    <button type="submit" class="fw-btn-fill btn-gradient-yellow">SEARCH</button>
-                                </div>
-                            </div>
-                        </form>
+
                         <div class="table-responsive">
                             <table class="table display data-table text-nowrap">
                                 <thead>
@@ -84,8 +69,8 @@
                                         <th>Photo</th>
                                         <th>Name</th>
                                         <th>Teacher name</th>
-                                        <th>Year</th>
-                                        <th>Description</th>
+                                        <!-- <th>Year</th>
+                                        <th>Description</th> -->
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -98,12 +83,12 @@
                                                 <label class="form-check-label"><%= classroom.id %></label>
                                             </div>
                                         </td>
-                                        <td class="text-center"><img src="/admin-panel-asset/img/figure/student2.png"
-                                                alt="student"></td>
+                                        <td class="text-center">
+                                            <img width="50" src="<%= classroom.photo%>" alt="Classroom Photo">
+                                        </td>
                                         <td><%= classroom.name %></td>
                                         <td><%= classroom.teacher_firstname + " " + classroom.teacher_lastname %></td>
-                                        <td><%= classroom.year %></td>
-                                        <td><%= classroom.description.substr(0, 20)+"...." %></td>
+
                                         <td>
                                             <div class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"

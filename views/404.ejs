@@ -131,7 +131,7 @@
                 </p>
 
                 <p>
-                    <a href="/" class="button-default"><i class="fa fa-arrow-left"></i> Please Go back </a>
+                    <a onclick="goBack()" class="button-default"><i class="fa fa-arrow-left"></i> Please Go back </a>
                 </p>
 
             </div>
@@ -169,6 +169,11 @@
     </div>
 </div>
 
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 
 <script src="js/vendor/jquery-1.12.3.min.js"></script>

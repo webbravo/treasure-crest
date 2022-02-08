@@ -7,13 +7,22 @@ module.exports.save = function (obj) {
 };
 
 
+module.exports.countParents = async function () {
+    const rows = await mysqlConnection.query('SELECT COUNT(*) AS numbers FROM Parents');
+    return rows[0].numbers;
+}
+
 module.exports.getAll = async function (limit) {
-    const rows = await mysqlConnection.query('SELECT * FROM Parents WHERE status = 1 ORDER BY ID DESC LIMIT ' + limit);
+    let rows;
+    if (limit) {
+        rows = await mysqlConnection.query('SELECT * FROM Parents WHERE status = 1 ORDER BY ID DESC LIMIT ' + limit);
+    } else {
+        rows = await mysqlConnection.query('SELECT * FROM Parents WHERE status = 1 ORDER BY ID DESC');
+    }
     return rows;
 }
 
 module.exports.isDuplicate = async (obj) => {
-    console.log(obj)
     try {
         const rows = await mysqlConnection.query('SELECT COUNT (*) AS parents FROM Parents WHERE phone = ? OR email = ?  ', obj);
         if (rows[0].parents > 0)

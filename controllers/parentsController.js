@@ -84,13 +84,10 @@ module.exports.add = async (req, res) => {
             const addParent = Parents.save(req.body);
             if (addParent === true) {
                 req.flash("success",
-                    `A new Parent Added!  Check <a href='/teachers/view-parent/${parentId}'>Parent</a> here`);
-                return res.redirect('../teachers/add-parents');
+                    `A new Parent Added!  Check <a href='/teachers/all-parents'>Parent</a> here`);
+                return res.redirect('/teachers/all-parents');
             }
         }
-
-
-
 
     }
 };

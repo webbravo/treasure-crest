@@ -83,8 +83,8 @@
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Last Name *</label>
                                     <input type="text" name="lastname" placeholder="Last name" class="form-control"
-                                        required
-                                        value="<%= (typeof formData !== 'undefined'  && formData.lastname ) ? formData.lastname : ''  %>">
+                                        value="<%= (typeof formData !== 'undefined'  && formData.lastname ) ? formData.lastname : ''  %>"
+                                        required>
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
@@ -92,6 +92,7 @@
                                     <select name="gender" class="select2" required>
 
                                         <option value="">Please Select Gender *</option>
+
                                         <option
                                             <%= (typeof formData !== 'undefined'  && formData.gender === 'male' ) ? selected="selected" : ''  %>
                                             value="male">Male</option>
@@ -110,9 +111,8 @@
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                    <label> Parent Address *</label>
+                                    <label> Parent Address </label>
                                     <input type="text" name="address" placeholder="House Address" class="form-control"
-                                        required
                                         value="<%= (typeof formData !== 'undefined'  && formData.address ) ? formData.address : ''  %>">
                                 </div>
 
@@ -373,9 +373,9 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label> State of Origin *</label>
-                                    <select id="states" name="state_origin" class="select2" required>
-                                        <option>Please Select a State *</option>
+                                    <label> State of Origin </label>
+                                    <select id="states" name="state_origin" class="select2">
+                                        <option>Please Select a State </option>
                                         <option value='Abia'>Abia</option>
                                         <option value='Adamawa'>Adamawa</option>
                                         <option value='AkwaIbom'>AkwaIbom</option>
@@ -412,29 +412,28 @@
                                         <option value='Taraba'>Taraba</option>
                                         <option value='Yobe'>Yobe</option>
                                         <option value='Zamfara'>Zamafara</option>
+                                        <option value='Others'>Others (Not listed)</option>
                                     </select>
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label> LGA of Origin *</label>
+                                    <label> LGA of Origin </label>
                                     <input type="text" name="lga_origin" placeholder="Enter a LGA" class="form-control"
-                                        required
                                         value="<%= (typeof formData !== 'undefined'  && formData.lga_origin ) ? formData.lga_origin : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Home Town *</label>
+                                    <label>Home Town </label>
                                     <input type="text" name="hometown" placeholder="Enter Hometown" class="form-control"
-                                        required
                                         value="<%= (typeof formData !== 'undefined'  && formData.hometown ) ? formData.hometown : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Religion *</label>
-                                    <select name="religion" class="select2" required>
-                                        <option value="">Please Select Religion *</option>
+                                    <label>Religion </label>
+                                    <select name="religion" class="select2">
+                                        <option value="">Please Select Religion </option>
                                         <option value="christian"
                                             <%= (typeof formData !== 'undefined'  && formData.religion === 'christian' ) ? selected="selected" : ''%>>
                                             Christian</option>
@@ -449,10 +448,10 @@
                                 </div>
 
                                 <div class="col-lg-6 col-12 form-group mg-t-30">
-                                    <label>Upload Student Photo (800px X 800px) * </label>
+                                    <label>Upload Student Photo (800px X 800px) </label>
 
                                     <input id="photo" name="photo" type="file" class="form-control-file"
-                                        accept="image/png, image/jpg" required>
+                                        accept="image/png, image/jpg">
                                 </div>
 
                                 <!-- THE ACADEMIC DETAILS -->
@@ -473,17 +472,17 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Previous School *</label>
+                                    <label>Previous School </label>
                                     <input type="text" name="previous_school" placeholder="Previous school"
-                                        class="form-control" required
+                                        class="form-control"
                                         value="<%= (typeof formData !== 'undefined'  && formData.previous_school ) ? formData.previous_school : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                    <label>Reason for leaving *</label>
+                                    <label>Reason for leaving </label>
                                     <input type="text" name="reason_for_leaving" placeholder="Reason for leaving"
-                                        class="form-control" required
+                                        class="form-control"
                                         value="<%= (typeof formData !== 'undefined'  && formData.reason_for_leaving ) ? formData.reason_for_leaving : ''  %>">
                                 </div>
 
@@ -504,8 +503,8 @@
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Academic TERM</label>
-                                    <select name="term" class="select2" required>
-                                        <option value="">Please Select TERM *</option>
+                                    <select name="term" class="select2">
+                                        <option value="">Please Select TERM </option>
                                         <option value="1st term"
                                             <%= (typeof formData !== 'undefined'  && formData.term === '1st term' ) ? selected="selected" : ''  %>>
                                             1st Term</option>
@@ -529,9 +528,9 @@
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Date Of Admission *</label>
+                                    <label>Date Of Admission </label>
                                     <input type="text" name="admission_date" placeholder="dd/mm/yyyy"
-                                        class="form-control air-datepicker" data-position="bottom right" required
+                                        class="form-control air-datepicker" data-position="bottom right"
                                         value="<%= (typeof formData !== 'undefined'  && formData.admission_date ) ? formData.admission_date : ''  %>">
                                     <i class="far fa-calendar-alt"></i>
                                 </div>
@@ -562,7 +561,7 @@
                                 <div class="col-xl-3 col-lg-9 col-12 form-group">
                                     <label>Parent 2 (Dad)</label>
                                     <select name="parent_2" class="select2">
-                                        <option value="">Please a Parent *</option>
+                                        <option value="">Please a Parent </option>
                                         <% parents.forEach(function (parent, index, arr){ %>
                                         <option value="<%= parent.id %>">
                                             <%= parent.name %>

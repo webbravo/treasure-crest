@@ -25,7 +25,7 @@
                         <li>
                             <a href="/teachers">Home</a>
                         </li>
-                        <li>Add New Parents</li>
+                        <li>Add New Class</li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
@@ -77,20 +77,20 @@
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Year</label>
-                                    <input type="number" name="year" placeholder="Classroom Year" class="form-control"
-                                        required>
+                                    <input type="number" name="year" placeholder="<%= new Date().getFullYear();%>"
+                                        class="form-control">
                                 </div>
 
-                                <div class="col-lg-6 col-6 form-group mg-t-30">
+                                <!-- <div class="col-lg-6 col-6 form-group mg-t-30">
                                     <label class="text-dark-medium">Classroom Photo (600px X 600px)</label>
                                     <input type="file" name="photo" class="form-control-file">
-                                </div>
+                                </div> -->
 
-                                <div class="col-lg-9 col-12 form-group">
+                                <!-- <div class="col-lg-9 col-12 form-group">
                                     <label>Description</label>
                                     <textarea class="textarea form-control" name="description" id="form-message"
-                                        cols="10" rows="9" required></textarea>
-                                </div>
+                                        cols="10" rows="9"></textarea>
+                                </div> -->
 
                                 <div class="col-12 form-group mg-t-8">
                                     <button type="submit"

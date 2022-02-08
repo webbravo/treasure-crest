@@ -66,7 +66,7 @@ module.exports.parentLogout = (req, res, next) => {
 
         // Redirect to login
         if (this.isParent) {
-            return res.redirect("../parents/login");
+            return res.redirect("login");
         }
     });
 }

@@ -81,24 +81,9 @@
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Year</label>
                                     <input type="number" name="year" placeholder="Classroom Year" class="form-control"
-                                        value="<%= classroom.year; %>" required>
+                                        value="<%= classroom.year; %>">
                                 </div>
 
-                                <div class="col-lg-6 col-6 form-group mg-t-30">
-                                    <% if(typeof classroom.photo === 'undefined'){  %>
-                                    <div style="max-width: 200px;" class="item-img">
-                                        <img src="<%= classroom.photo %>" alt="student">
-                                    </div>
-                                    <% } %>
-                                    <label>Classroom Photo (600px X 600px)</label>
-                                    <input type="file" name="photo" class="form-control-file">
-                                </div>
-
-                                <div class="col-lg-9 col-12 form-group">
-                                    <label>Description</label>
-                                    <textarea class="textarea form-control" name="description" id="form-message"
-                                        cols="10" rows="9" required><%= classroom.description %></textarea>
-                                </div>
 
                                 <div class="col-12 form-group mg-t-8">
                                     <button type="submit"

@@ -18,6 +18,11 @@ router.get('/contact', (req, res) => {
 	res.render('contact');
 });
 
+
+router.get('/admission', (req, res) => {
+	res.render('admission');
+});
+
 router.get('/blog', async (req, res) => {
 	const posts = await Blog.getAll();
 	res.render('blog', {

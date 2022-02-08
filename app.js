@@ -14,9 +14,9 @@ const expressValidator = require("express-validator");
 const mysqlConnection = require("./models/connection");
 const flash = require("connect-flash");
 
-mysqlConnection.query("SHOW DATABASES").then(result => {
-  console.log(result);
-});
+// mysqlConnection.query("SHOW DATABASES").then(result => {
+//   console.log(result);
+// });
 
 // Session Info retrived from .ENV
 const SESSION_LIFETIME = process.env.SESSION_LIFETIME;
@@ -61,7 +61,13 @@ app.use(
     name: SESSION_NAME,
     resave: false, // forces the session to be saved back to the store
     saveUninitialized: true, // dont save unmodified
-    // store: new MySQLStore(helper.MySQLStoreOptions), // Session store for Mysql
+    store: new MySQLStore({
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME
+    }), // Session store for Mysql
     secret: SESSION_SECRET,
     cookie: {
       maxAge: SESSION_LIFETIME * 2,
@@ -87,6 +93,7 @@ app.use(function (req, res, next) {
 app.use((req, res, next) => {
   res.locals.isAdmin = req.session.isAdmin;
   res.locals.teacherID = req.session.teacherID;
+  res.locals.parentID = req.session.parentID;
   res.locals.teacherName = req.session.teacherName;
   res.locals.helpers = {
     calculateAge: DOB => {

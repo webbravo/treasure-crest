@@ -41,7 +41,7 @@
                         <span><i class="fa fa-calendar"></i><%= post.date %> / By: <%= post.added_by %></span>
                     </div>
                     <div class="blog-post-details-img">
-                        <img src="<%= post.photo %>" alt="">
+                        <img data-src="<%= post.photo %>" alt="">
                     </div>
                     <div class="blog-post-details-text">
                         <h4><%= post.title %></h4>
@@ -60,7 +60,7 @@
                                 <div class="single-blog-image">
                                     <div class="overlay-effect">
                                         <a href="/blog/post/<%= post.id %>">
-                                            <img src="<%= post.photo %>" alt="">
+                                            <img data-src="<%= post.photo %>" alt="">
                                             <span class="class-date"><%= post.date %></span>
                                         </a>
                                     </div>

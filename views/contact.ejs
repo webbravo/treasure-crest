@@ -35,9 +35,6 @@
                     <div class="single-title">
                         <h3>Contact Info</h3>
                     </div>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. </p> -->
                     <div class="contact-address-container">
                         <div class="contact-address-info">
                             <div class="contact-icon">
@@ -56,6 +53,7 @@
                             <div class="contact-text">
                                 <h4>Phone</h4>
                                 <span><a href="tel:09079488546">(090) 7948 - 8546</a> </span>
+                                <span><a href="https://wa.me/09037404488">(0903) 7404 - 488</a> </span>
                             </div>
                         </div>
                         <div class="contact-address-info">
@@ -64,9 +62,8 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <span><a href="https://websitedownloader.io/cdn-cgi/l/email-protection"
-                                        class="__cf_email__"
-                                        data-cfemail="f796939a9e99b78798809285da959898848384d994989a">[email&#160;protected]</a></span>
+                                <span><a href="mailto:treasurecrestschool@gmail.com"
+                                        class="__cf_email__">treasurecrestschool@gmail.com</a></span>
                             </div>
                         </div>
                     </div>
@@ -78,17 +75,23 @@
                         <h3>Send A Message</h3>
                     </div>
                     <div class="contact-form-container">
-                        <form action="https://devitems.com/tf/techedu-preview/techedu/mail.php" method="post">
+                        <form action="/sendmail" method="post">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" name="name" placeholder="Your Name *">
+                                    <input type="text" name="name" placeholder="Your Name *" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" placeholder="Your Email *">
+                                    <input type="email" name="email" placeholder="Your Email *" required>
                                 </div>
                             </div>
                             <input type="text" name="subject" placeholder="Subject *">
-                            <textarea name="message" class="yourmessage" placeholder="Your message"></textarea>
+                            <textarea name="message" class="yourmessage" placeholder="Your message" required></textarea>
+                            <div class="form-group">
+                                <div class="form-field">
+                                    <div class="g-recaptcha" data-sitekey="6LcJ66EUAAAAAIoHHGeWL-yBBcHqtPPE9BnKjq6s">
+                                    </div>
+                                </div>
+                            </div>
                             <button type="submit" class="button-default button-yellow"><i
                                     class="fa fa-send"></i>Submit</button>
                         </form>
