@@ -16,4 +16,4 @@ Treasure crest website was built for Treasure Crest Integrated School, the websi
 
 LINK
 
-[text](https://treasure-creast.herokuapp.com/)
+[Click here to view](https://treasure-creast.herokuapp.com/)
