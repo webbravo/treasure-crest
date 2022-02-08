@@ -17,8 +17,9 @@ let router = express.Router();
 
 
 router.get('/', auth.isParent, async (req, res) => {
+
 	// Select the student related to this Parent
-	const students = await Students.getStudentByParentId(12);
+	const students = await Students.getStudentByParentId(req.session.parentID);
 
 	//	Render the Student
 	res.render('parents/index', {

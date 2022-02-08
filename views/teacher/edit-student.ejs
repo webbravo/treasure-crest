@@ -112,15 +112,14 @@
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                    <label> Parent Address *</label>
+                                    <label> Parent Address </label>
                                     <input type="text" name="address" placeholder="House Address" class="form-control"
-                                        required
                                         value="<%= (typeof student !== 'undefined'  && student.address ) ? student.address : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label> Nationailty *</label>
+                                    <label> Nationality *</label>
                                     <select name="nationality" class="select2" required>
                                         <option>Please Select Country *</option>
                                         <option selected="selected" value="Nigeria">Nigeria</option>
@@ -375,8 +374,8 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label> State of Origin *</label>
-                                    <select id="states" name="state_origin" class="select2" required>
+                                    <label> State of Origin </label>
+                                    <select id="states" name="state_origin" class="select2">
                                         <option>Please Select a State *</option>
                                         <option value='Abia'>Abia</option>
                                         <option value='Adamawa'>Adamawa</option>
@@ -418,24 +417,22 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label> LGA of Origin *</label>
+                                    <label> LGA of Origin </label>
                                     <input type="text" name="lga_origin" placeholder="Enter a LGA" class="form-control"
-                                        required
                                         value="<%= (typeof student !== 'undefined'  && student.lga_origin ) ? student.lga_origin : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Home Town *</label>
+                                    <label>Home Town </label>
                                     <input type="text" name="hometown" placeholder="Enter Hometown" class="form-control"
-                                        required
                                         value="<%= (typeof student !== 'undefined'  && student.hometown ) ? student.hometown : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Religion *</label>
-                                    <select name="religion" class="select2" required>
+                                    <label>Religion </label>
+                                    <select name="religion" class="select2">
                                         <option value="">Please Select Religion *</option>
                                         <option value="christian"
                                             <%= (typeof student !== 'undefined'  && student.religion === 'christian' ) ? selected="selected" : ''%>>
@@ -455,7 +452,7 @@
                                         <img src="<%= student.photo %>" alt="student">
                                     </div>
                                     <label class="text-dark-medium">Upload Student Photo (400px X 400px)
-                                        *</label>
+                                    </label>
                                     <input id="photo" name="photo" type="file" class="form-control-file"
                                         accept="image/png, image/jpg">
                                 </div>
@@ -478,17 +475,17 @@
                                 </div>
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Previous School *</label>
+                                    <label>Previous School </label>
                                     <input type="text" name="previous_school" placeholder="Previous school"
-                                        class="form-control" required
+                                        class="form-control"
                                         value="<%= (typeof student !== 'undefined'  && student.previous_school ) ? student.previous_school : ''  %>">
                                 </div>
 
 
                                 <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                    <label>Reason for leaving *</label>
+                                    <label>Reason for leaving </label>
                                     <input type="text" name="reason_for_leaving" placeholder="Reason for leaving"
-                                        class="form-control" required
+                                        class="form-control"
                                         value="<%= (typeof student !== 'undefined'  && student.reason_for_leaving ) ? student.reason_for_leaving : ''  %>">
                                 </div>
 
@@ -509,8 +506,8 @@
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Academic TERM</label>
-                                    <select name="term" class="select2" required>
-                                        <option value="">Please Select TERM *</option>
+                                    <select name="term" class="select2">
+                                        <option value="">Please Select TERM </option>
                                         <option value="1st term"
                                             <%= (typeof student !== 'undefined'  && student.term === '1st term' ) ? selected="selected" : ''  %>>
                                             1st Term</option>
@@ -534,9 +531,9 @@
 
 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Date Of Admission *</label>
+                                    <label>Date Of Admission </label>
                                     <input type="text" name="admission_date" placeholder="dd/mm/yyyy"
-                                        class="form-control air-datepicker" data-position="bottom right" required
+                                        class="form-control air-datepicker" data-position="bottom right"
                                         value="<%= (typeof student !== 'undefined'  && student.admission_date ) ? student.admission_date : ''  %>">
                                     <i class="far fa-calendar-alt"></i>
                                 </div>

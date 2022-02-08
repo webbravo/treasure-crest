@@ -105,19 +105,7 @@ module.exports = {
         }).withMessage("phone must be leat 11 chars")
         .isNumeric().withMessage("No special chars allowed"),
 
-        check("address")
-        .trim()
-        .isLength({
-            min: 10
-        }).withMessage("House address is too short!"),
 
-
-
-        check("occupation")
-        .trim()
-        .isLength({
-            min: 4
-        }).withMessage("Occupation name too short!"),
 
         check("religion")
         .trim()
@@ -224,19 +212,15 @@ module.exports = {
         })
         .withMessage("Class name too short! "),
 
-        check("year")
+        check("teacher_id")
         .trim()
         .isLength({
-            min: 4
-        })
-        .withMessage("Enter a valid email address")
-        .isNumeric().withMessage("Use only numbers!"),
-
-        check("description")
-        .trim()
+            min: 1
+        }).withMessage("Invalid Class teacher ID")
         .isLength({
-            min: 15
-        }).withMessage("Description too short!")
+            max: 11
+        }).withMessage("Please Class teacher ID")
+        .isNumeric().withMessage("No special chars allowed")
     ],
 
     addStudentValidation: [
@@ -272,7 +256,7 @@ module.exports = {
         check("address")
         .trim()
         .isLength({
-            min: 10
+            min: 0
         }).withMessage("Address too short!")
         .isLength({
             max: 255
@@ -281,25 +265,25 @@ module.exports = {
         check("nationality")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Country name too short!")
         .isLength({
-            max: 20
+            max: 40
         }).withMessage("Country name too long"),
 
         check("state_origin")
         .trim()
         .isLength({
-            min: 3
+            min: 0
         }).withMessage("State name too short!")
         .isLength({
-            max: 20
+            max: 30
         }).withMessage("State name too long"),
 
         check("lga_origin")
         .trim()
         .isLength({
-            min: 3
+            min: 0
         }).withMessage("LGA name too short!")
         .isLength({
             max: 20
@@ -308,7 +292,7 @@ module.exports = {
         check("hometown")
         .trim()
         .isLength({
-            min: 3
+            min: 0
         }).withMessage("Home town name too short!")
         .isLength({
             max: 30
@@ -319,7 +303,7 @@ module.exports = {
         check("religion")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Religion name too short!")
         .isLength({
             max: 10
@@ -337,7 +321,7 @@ module.exports = {
         check("previous_school")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Previous School name too short!")
         .isLength({
             max: 30
@@ -347,7 +331,7 @@ module.exports = {
         check("reason_for_leaving")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Reason too short!")
         .isLength({
             max: 250
@@ -356,7 +340,7 @@ module.exports = {
         check("reason_for_leaving")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Reason too short!")
         .isLength({
             max: 250
@@ -378,7 +362,7 @@ module.exports = {
         check("term")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Term too short!")
         .isLength({
             max: 12
@@ -388,7 +372,7 @@ module.exports = {
         check("academic_session")
         .trim()
         .isLength({
-            min: 4
+            min: 0
         }).withMessage("Year too short")
         .isLength({
             max: 10

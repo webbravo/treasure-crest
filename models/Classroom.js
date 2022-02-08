@@ -55,3 +55,13 @@ module.exports.getAllClassID = async () => {
     const rows = await mysqlConnection.query('SELECT id, name FROM Class');
     return rows;
 };
+
+// Delete a Classroom by Id
+module.exports.delete = async classroomId => {
+    try {
+        mysqlConnection.query("DELETE FROM Class WHERE id = ? ", classroomId);
+        return true;
+    } catch (error) {
+        console.error(error);
+    }
+};

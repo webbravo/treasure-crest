@@ -96,7 +96,7 @@ module.exports.update = async (req, res) => {
         if (Classroom.update(req.body, classroomId) === true) {
             req.flash(
                 "success",
-                `Student Details updated!  Check <a href='/teachers/view-student?stud_id=${studentId}&parent_1=${req.body.parent_1}&parent_2=${req.body.parent_2}&class_id=${req.body.class_id}'>Student</a> here`
+                `Class Details updated!  Check <a href='/teachers/view-class/${classroomId}'>Class</a> here`
             );
             return res.redirect("back");
         }
@@ -154,5 +154,20 @@ module.exports.renderEditForm = async (req, res, next) => {
     } else {
         req.flash("error", "That Parent does not exist!");
         return res.redirect("../all-class");
+    }
+};
+
+
+// Delete Class
+module.exports.delete = async (req, res, next) => {
+    //  Get the Post Id
+    const classroomId = req.params.id;
+
+    // Delete Class
+    const delClass = await Classroom.delete(classroomId);
+
+    if (delClass === true) {
+        req.flash("success", `Classroom was Deleted successfully!`);
+        return res.redirect("back");
     }
 };

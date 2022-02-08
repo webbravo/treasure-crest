@@ -1,6 +1,9 @@
 const Teachers = require('../models/Teachers');
 const h = require('../util/helper');
 const bcrypt = require("bcryptjs");
+const Students = require('../models/Students');
+const Parents = require('../models/Parents');
+
 const {
     validationResult,
 } = require('express-validator');
@@ -99,11 +102,18 @@ module.exports.showLoginForm = (req, res, next) => {
     });
 };
 
-module.exports.showDashboard = (req, res) => {
+
+module.exports.showDashboard = async (req, res) => {
     // Get Dashboard Info!
-    // console.log(req.session.teacherName)
+    const numStudents = await Students.countStudents();
+    const numParents = await Parents.countParents();
+    const numTeachers = await Teachers.countTeachers();
+
     res.render('teacher/index', {
         pageTitle: 'Teacher Dashboard | Treasure Crest Integrated School',
+        numParents,
+        numStudents,
+        numTeachers,
         fullname: `${req.session.teacherName.firstname} ${req.session.teacherName.lastname}`
     });
 };

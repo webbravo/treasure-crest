@@ -10,6 +10,14 @@ module.exports.save = obj => {
     }
 };
 
+
+module.exports.countStudents = async function () {
+    const rows = await mysqlConnection.query('SELECT COUNT(*) AS numbers FROM Students');
+    return rows[0].numbers;
+}
+
+
+
 module.exports.update = (obj, studentId) => {
     // Execute and Update Details Students to the DB
     try {

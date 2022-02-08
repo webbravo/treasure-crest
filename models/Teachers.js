@@ -6,6 +6,10 @@ module.exports.save = function (obj) {
     return true;
 };
 
+module.exports.countTeachers = async function () {
+    const rows = await mysqlConnection.query('SELECT COUNT(*) AS numbers FROM Teachers');
+    return rows[0].numbers;
+}
 
 module.exports.findByEmail = async function (email) {
     let results = [];
